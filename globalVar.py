@@ -272,7 +272,7 @@ ui['dm']=[]
 ui['intv']=0
 ui['dtm1']=0
 ui['ntape']=0
-ui['geofak']=0
+ui['geofak']=0.0
 ui['ifstop']=0
 ui['kk1']=0
 ui['nko']=0
@@ -318,8 +318,6 @@ ui['cp']=0
 ui['xla']=0
 ui['ifred']=0
 ui['tz']=0
-ui['nm1']=0
-ui['im1']=0
 ui['dpp']=0
 ui['ifkon']=0
 """dan steuer subroutine"""
@@ -450,3 +448,33 @@ for i in range(31):
 qps1=[]
 for i in range(31):
 	qps1.append(0.0)
+
+temp=[0.0, 0.0, 0.0, 0.0, 0.0]
+qspeiz=[]
+for i in range(31):
+	qspeiz.append(temp)
+	
+qkonvz=[]
+for i in range(31):
+	qkonvz.append(temp)
+	
+qnuklz=[]
+for i in range(31):
+	qnuklz.append(temp)
+
+
+"""
+Dimensions
+"""
+tpun=[] """13 elements"""
+npun=[] """4 elements"""
+ipun1=[] """4 elements"""
+plam=[] """5 elements"""
+tpl=[] """100 elements"""
+qx=[] """31 elements"""
+zeipkt=[] """31 elements"""
+tppkt=[] """31 elements"""
+zeipk1=[] """10x31 elements"""
+tppk1=[] """10x31 elements"""
+iftv=[] """31 elements"""
+

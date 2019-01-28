@@ -78,9 +78,38 @@ def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iex
 		zeits=zeith * 3600
 		globalVar.ui['delta']=0.1
 		
-		for i in range(1,globalVar.komp1['kmax']+1):
-			qquel1[i]=0.0
-			buins[i]=0.0
-			qspei1[i]=0.0
-			qkons1[i]=0.0
-			qps1[i]=0.0
+		for k in range(globalVar.komp1['kmax']):
+			qquel1[k]=0.0
+			buins[k]=0.0
+			qspei1[k]=0.0
+			qkons1[k]=0.0
+			qps1[k]=0.0
+			"""initializing qspeiz, qkonvz and qnuklz are conducted in globalVar"""
+			
+		globalVar.ui['geofak']=1.0
+		if globalVar.Print['indgeo']==2:
+			globalVar.ui['geofak']=1000.0
+			
+		ifko1=1
+		if globalVar.ui['ifkon']==-1:
+			ifko1=-1
+			
+		globalVar.ui['fakz']=1.0
+		globalVar.ui['xf']=xfr
+		globalVar.ui['intv']=1
+		globalVar.ui['nlp']=0
+		globalVar.ui['ifstop']=0
+		globalVar.ui['im']=globalVar.reg['imax']
+		globalVar.ui['nm']=globalVar.reg['nmax']
+		globalVar.ui['im1']=globalVar.ui['im']-1
+		globalVar.ui['nm1']=globalVar.ui['nm']-1
+		globalVar.ui['iflt1']=globalVar.lamt['iflamt']+1
+		globalVar.ui['ifdt2']=0
+		globalVar.ui['nko']=0
+		dtem1=globalVar.trans['dzeit'][globalVar.ui['intv']]
+		globalVar.ui['dtem4']=dtem1
+		globalVar.ui['ifsfb']=0
+		if globalVar.feld2['imh']>=1 or globalVar.feld2['nmh']>=1:
+			for ii in range(globalVar.feld2['imh']):
+				for nn in range(globalVar.feld2['nmh']):
+					
