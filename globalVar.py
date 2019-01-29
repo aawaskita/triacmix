@@ -350,7 +350,6 @@ het2['vk']=[]
 berhet={}
 berhet['thet']=[]
 berhet['wwk']=[]
-berhet['ifbh']=[]
 berhet['wkaph']=[]
 
 bheter={}

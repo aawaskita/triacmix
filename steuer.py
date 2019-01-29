@@ -112,4 +112,10 @@ def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iex
 		if globalVar.feld2['imh']>=1 or globalVar.feld2['nmh']>=1:
 			for ii in range(globalVar.feld2['imh']):
 				for nn in range(globalVar.feld2['nmh']):
-					
+					"""KK=KOM(IGG,NGG)"""
+					igg=globalVar.feld2['idiff']+ii
+					ngg=globalVar.feld2['ndiff']+nn
+					kk=globalVar.komp1['kom'][igg][ngg]
+					if1=globalVar.berhet['ifbh'][ii][nn]
+					if if1 != 0:
+						globalVar.het2['zkug'][ii][nn]=
