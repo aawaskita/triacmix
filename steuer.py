@@ -1,4 +1,5 @@
 import globalVar
+from zkugl import ZKUGL
 
 def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iexpr,n200,ndr,nxs,pov,zf,nry,qnw,deldz,qthx,wtgint):
 	nendk0=nendpt+1
@@ -118,4 +119,4 @@ def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iex
 					kk=globalVar.komp1['kom'][igg][ngg]
 					if1=globalVar.berhet['ifbh'][ii][nn]
 					if if1 != 0:
-						globalVar.het2['zkug'][ii][nn]=
+						globalVar.het2['zkug'][ii][nn]=ZKUGL(ii,nn,kk)
