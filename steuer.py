@@ -1,5 +1,6 @@
 import globalVar
 from zkugl import ZKUGL
+from printt import PRINTT
 
 def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iexpr,n200,ndr,nxs,pov,zf,nry,qnw,deldz,qthx,wtgint):
 	nendk0=nendpt+1
@@ -129,5 +130,9 @@ def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iex
 				for i in range(globalVar.reg['imax']):
 					globalVar.Print['bu'][i][n]=globalVar.calc['t'][i][n]
 					globalVar.calc['tflu'][i][n]=0.0
+			
+			ifph=0
+			if nhet !=0 and globalVar.rstrt['ifrsta']>=3: ifph=1
+			
 			
 		
