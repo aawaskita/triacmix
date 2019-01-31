@@ -476,4 +476,6 @@ tppkt=[] """31 elements"""
 zeipk1=[] """10x31 elements"""
 tppk1=[] """10x31 elements"""
 iftv=[] """31 elements"""
-
+fakz1=[] """80 elements"""
+fakz2=[] """80 elements"""
+fakz1a=[] """80 elements"""

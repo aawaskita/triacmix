@@ -110,13 +110,24 @@ def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iex
 		dtem1=globalVar.trans['dzeit'][globalVar.ui['intv']]
 		globalVar.ui['dtem4']=dtem1
 		globalVar.ui['ifsfb']=0
+		
 		if globalVar.feld2['imh']>=1 or globalVar.feld2['nmh']>=1:
 			for ii in range(globalVar.feld2['imh']):
 				for nn in range(globalVar.feld2['nmh']):
-					"""KK=KOM(IGG,NGG)"""
 					igg=globalVar.feld2['idiff']+ii
 					ngg=globalVar.feld2['ndiff']+nn
 					kk=globalVar.komp1['kom'][igg][ngg]
 					if1=globalVar.berhet['ifbh'][ii][nn]
 					if if1 != 0:
 						globalVar.het2['zkug'][ii][nn]=ZKUGL(ii,nn,kk)
+						
+		nz=globalVar.het1['nhzon'][globalVar.ui['kk1']]
+		
+		if globalVar.trans['ifinst'] !=0:
+			for n in range(globalVar.reg['nmax']):
+				globalVar.fakz2[n]=1.0
+				for i in range(globalVar.reg['imax']):
+					globalVar.Print['bu'][i][n]=globalVar.calc['t'][i][n]
+					globalVar.calc['tflu'][i][n]=0.0
+			
+		
