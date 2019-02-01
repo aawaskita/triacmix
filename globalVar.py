@@ -68,12 +68,12 @@ Print['indgeo']=0
 reg={}
 reg['imax']=0
 reg['nmax']=0
-reg['dr']=0
-reg['dph']=0
-reg['rad']=0
-reg['phi']=0
-reg['ikom']=0
-reg['nkom']=0
+reg['dr']=[]
+reg['dph']=[]
+reg['rad']=[]
+reg['phi']=[]
+reg['ikom']=[]
+reg['nkom']=[]
 reg['rad0']=0
 reg['phi0']=0
 reg['ifrfi']=0
@@ -86,12 +86,12 @@ reg['ifref']=0
 komp1={}
 komp1['kmax']=0
 komp1['kom']=[]
-komp1['lam']=0
-komp1['tvor']=0
-komp1['alp']=0
-komp1['ref']=0
-komp1['iftv']=0
-komp1['kart']=0
+komp1['lam']=[]
+komp1['tvor']=[]
+komp1['alp']=[]
+komp1['ref']=[]
+komp1['iftv']=[]
+komp1['kart']=[]
 komp1['bem']=0
 """and steuer subroutine"""
 
@@ -479,3 +479,8 @@ iftv=[] """31 elements"""
 fakz1=[] """80 elements"""
 fakz2=[] """80 elements"""
 fakz1a=[] """80 elements"""
+
+"""
+Temporary file, intended to anticipate N61 writing process.
+"""
+n61file=open('N61','w')
