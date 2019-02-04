@@ -189,7 +189,7 @@ qvar['tau']=0
 blindl={}
 blindl['thetb']=[]
 blindl['thaltb']=[]
-blindl['tmitl']=0
+blindl['tmitl']=0.0
 blindl['m24']=0
 blindl['ngeom']=0
 blindl['cizet0']=0
@@ -461,6 +461,12 @@ qnuklz=[]
 for i in range(31):
 	qnuklz.append(temp)
 
+"""
+printt subroutine
+"""
+bezei={}
+bezei['bi']=0
+bezei['bn']=0
 
 """
 Dimensions
@@ -479,6 +485,7 @@ iftv=[] """31 elements"""
 fakz1=[] """80 elements"""
 fakz2=[] """80 elements"""
 fakz1a=[] """80 elements"""
+feld=[] """50x80 elements"""
 
 """
 Temporary file, intended to anticipate N61 writing process.
