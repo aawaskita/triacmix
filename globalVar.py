@@ -486,6 +486,7 @@ fakz1=[] """80 elements"""
 fakz2=[] """80 elements"""
 fakz1a=[] """80 elements"""
 feld=[] """50x80 elements"""
+wkph=[] """5 elements"""
 
 """
 Temporary file, intended to anticipate N61 writing process.

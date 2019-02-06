@@ -1,6 +1,7 @@
 import globalVar
 from zkugl import ZKUGL
 from printt import PRINTT
+from wkap import WKAP
 
 def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iexpr,n200,ndr,nxs,pov,zf,nry,qnw,deldz,qthx,wtgint):
 	nendk0=nendpt+1
@@ -133,6 +134,32 @@ def STEUER(ifkon,itlam,tdiff,nloop,ifred,ifzw,itm3,cp0,iftest,nhet,zeith,xfr,iex
 			
 			ifph=0
 			if nhet !=0 and globalVar.rstrt['ifrsta']>=3: ifph=1
+			print('*** START OF INSTATIONARY CALCULATION ***')
 			
+			"""
+			PENERBITAN SUHU PADAT UNTUK MEMORY EKSTERNAL UNTUK EVTL. 3-D REPRESENTASI DIMULAI SETIAP SETIAP CETAK PADA KERTAS ('CALL PRINTT') SEBAGAI UNIT OUTPUT: DEFINE IEXPR DI FT..F001
+			"""
+			PRINTT(zeith,zeits,dtem1,globalVar.Print['bu'],ifph)
 			
+		if iexpr!=0:
+			if globalVar.Print['indgeo']==1:
+				for n in range(globalVar.reg['nmax']):
+					globalVar.reg['phi'][n]=globalVar.reg['phi'][n]*180.0/3.1416
+					
+				"""
+				Unknown statement:
+				WRITE(IEXPR) NMAX,IMAX, (PHI(N),N=1,NMAX), (RAD(I),I=1,IMAX)
+				"""
+				
+				for n in range(globalVar.reg['nmax']):
+					globalVar.reg['phi'][n]=globalVar.reg['phi'][n]*3.1416/180.0
+			else:
+				"""
+				Unknown statement
+				WRITE(IEXPR) NMAX,IMAX, (PHI(N),N=1,NMAX), (RAD(I),I=1,IMAX)
+				WRITE(IEXPR) ZEITS, ((BU(I,N),N=1,NMAX),I=1,IMAX)
+				"""
 		
+		if globalVar.trans['ifinst'] != 0:
+			
+			
