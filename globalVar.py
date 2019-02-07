@@ -185,6 +185,8 @@ qvar['jrestw']=0
 qvar['jrestr']=0
 qvar['jrest']=0
 qvar['tau']=0
+qvar['qav']=0
+qvar['tk']=0
 
 blindl={}
 blindl['thetb']=[]
@@ -251,11 +253,6 @@ zeug={}
 zeug['du']=[]
 zeug['delday']=0
 
-qvar={}
-qvar['dum']=[]
-qvar['qav']=0
-qvar['tk']=0
-
 mputa={}
 mputa['teimin']=0
 mputa['teimax']=0
@@ -320,6 +317,8 @@ ui['ifred']=0
 ui['tz']=0
 ui['dpp']=0
 ui['ifkon']=0
+ui['wkapzt']=0 
+ui['dum']=[] """ada juga di qvar"""
 """dan steuer subroutine"""
 
 """
@@ -487,7 +486,7 @@ fakz2=[] """80 elements"""
 fakz1a=[] """80 elements"""
 feld=[] """50x80 elements"""
 wkph=[] """5 elements"""
-
+tm=[] """undefined yet, its size differ from a function to another function"""
 """
 Temporary file, intended to anticipate N61 writing process.
 """
