@@ -1,0 +1,3 @@
+\contentsline {chapter}{Daftar Gambar}{ii}{section*.1}
+\contentsline {chapter}{Daftar Program}{iii}{section*.4}
+\contentsline {chapter}{\numberline {1}Pendahuluan}{2}{chapter.1}

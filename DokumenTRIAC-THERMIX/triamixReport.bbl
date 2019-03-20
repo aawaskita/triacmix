@@ -1,0 +1,55 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{report1}
+K.~Verfondern and H.~Nabielek, ``The mathematical basis of the panama-i code
+  for modelling pressure vessel failure of triso coated particles under
+  accident conditions,'' Julich Research Center, Germany, Tech. Rep., 1990.
+
+\bibitem{VERFONDERN201484}
+\BIBentryALTinterwordspacing
+K.~Verfondern, J.~Cao, T.~Liu, and H.-J. Allelein, ``Conclusions from v\&v
+  studies on the german codes panama and fresco for htgr fuel performance and
+  fission product release,'' \emph{Nuclear Engineering and Design}, vol. 271,
+  pp. 84 -- 91, 2014, sI : HTR 2012. [Online]. Available:
+  \url{http://www.sciencedirect.com/science/article/pii/S0029549313005992}
+\BIBentrySTDinterwordspacing
+
+\bibitem{triac1}
+A.~A. Waskita and T.~Setiadipura, ``The development of triac-batan: a triso
+  fuel performance analysis code,'' in \emph{Proceeding of Symposium of
+  Emerging Nuclear Technology and Engineering Novelty}, 2018.
+
+\bibitem{vsop1}
+H.~B. K.~J.~R\"{u}tten, K. A.~Haas and W.~Scherer, ``V.s.o.p (99/05) computer
+  code system for reactor physics and fuel cycle simulation,''
+  Forschungszentrum J\"{u}lich GmbH, Tech. Rep., 2005.
+
+\bibitem{vsop2}
+K.~A.~H. K.~J.~R\"{u}tten and C.~Pohl, ``Computer code system v.s.o.p (99/11)
+  update 2011 of v.s.o.p (99)-version 2009 code manual,'' Forschungszentrum
+  J\"{u}lich GmbH, Tech. Rep., 2009.
+
+\bibitem{lhs}
+A.~A. Waskita, N.~A. Wahanani, A.~Purwaningsih, and T.~Setiadipura, ``Study on
+  effect of latin hypercube sampling method in triso fuel performance
+  analysis,'' in \emph{Proceeding of HTR 2018}, 2018.
+
+\end{thebibliography}

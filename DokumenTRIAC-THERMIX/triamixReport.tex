@@ -1,0 +1,95 @@
+\documentclass[a4paper,11pt]{report}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern,url}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{pslatex}
+\usepackage{listings}
+\usepackage{textcomp}
+\usepackage{float}
+\usepackage[paper=a4paper,headheight=0pt,left=4cm,top=3cm,right=3cm,bottom=3cm]{geometry}
+\usepackage{titling}
+\usepackage{pdfpages}
+\usepackage{booktabs}
+\usepackage[version=4]{mhchem}
+\usepackage{isotope}
+\usepackage{datetime2}
+\usepackage{rotating}
+\usepackage{pdflscape}
+\usepackage{subfigure}
+\DTMsetdatestyle{ddmmyyyy}
+\DTMsetup{datesep=--}
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+\newcommand{\ra}[1]{\renewcommand{\arraystretch}{#1}}
+\newcommand{\addChapter}[1]{\phantomsection \addcontentsline{toc}{chapter}{#1}}
+% Tambahkan berkas PDF ke dalam laporan dan gunakan style laporan  
+% terhadap berkas ini. 
+\newcommand{\inpdf}[1]{
+	\includepdf[pages=-,pagecommand={\thispagestyle{fancy}}]{#1.pdf}}
+% 
+% Tambahkan berkas PDF ke dalam laporan. 
+\newcommand{\putpdf}[1]{\includepdf[pages=-]{#1.pdf}}
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+% 
+\include{hype.indonesia}
+
+\renewcommand{\contentsname}{Daftar Isi}
+\renewcommand{\chaptername}{BAB}
+\renewcommand{\bibname}{Daftar Referensi}
+\renewcommand{\listfigurename}{Daftar Gambar}
+\renewcommand\lstlistlistingname{Daftar Program}
+\renewcommand{\figurename}{Gambar}
+\renewcommand{\tablename}{Tabel}
+%\title{Lampiran II}
+%\title{Kajian Komputasi Dinamika Fluida berbasis OpenFOAM}
+%\author{Arya Adhyaksa Waskita}
+%\date{January 31, 2017}
+\begin{document}
+\include{sampul}
+%\tableofcontents
+
+\pagenumbering{roman}
+%\maketitle
+\clearpage
+\setcounter{page}{2}
+\addChapter{Daftar Gambar}
+\tableofcontents
+%\clearpage
+\listoffigures
+\addChapter{Daftar Program}
+\lstlistoflistings
+%\clearpage
+\pagenumbering{arabic}
+
+\chapter{Pendahuluan}
+Analisis keselamatan reaktor nuklir melibatkan sejumlah aspek seperti diperlihatkan pada \figurename~\ref{fig:aspek}. Setelah upaya melakukan rekayasa balik terhadap PANAMA \cite{report1,VERFONDERN201484} untuk aspek kinerja bahan bakar \cite{triac1}, dipandang perlu untuk melanjutkan analisis keselamatan di aspek \textit{thermal hydraulics}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{pics/tools.png}
+    \caption{Aspek keselamatan reaktor nuklir}
+    \label{fig:aspek}
+  \end{center}
+\end{figure}
+
+Kode komputer THERMIX \cite{vsop1,vsop2} sebagai salah satu kode baku dalam analisis keselamatan reaktor di aspek termal yang turut menghantarkan Jerman sebagai \textit{center of excellent} pada penelitian tersebut. Dari THERMIX, sejarah irradiasi dan kecelakaan yang dialamai partikel triso dapat disimulasikan.
+
+Karenanya, perangkat lunak akan dikembangkan berdasarkan data referensi dan dokumentasi  \textbf{\cite{vsop1,vsop2}}. Hasil rekayasa balik akan berupa prototipe kode komputer/perangkat lunak yang terintegrasi dengan modul analisis keselamatan bahan bakar berbasis partikel triso \cite{triac1} dan analisis ketidakpastian \cite{lhs}.
+
+% Daftar Pustaka
+\bibliographystyle{IEEEtran}
+\bibliography{references}
+
+%\begin{appendix}
+%	\include{markLampiran}
+%	\setcounter{page}{2}
+%	\include{lampiran}
+%\end{appendix}
+
+\end{document}
