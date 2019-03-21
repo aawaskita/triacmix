@@ -82,6 +82,49 @@ Kode komputer THERMIX \cite{vsop1,vsop2} sebagai salah satu kode baku dalam anal
 
 Karenanya, perangkat lunak akan dikembangkan berdasarkan data referensi dan dokumentasi  \textbf{\cite{vsop1,vsop2}}. Hasil rekayasa balik akan berupa prototipe kode komputer/perangkat lunak yang terintegrasi dengan modul analisis keselamatan bahan bakar berbasis partikel triso \cite{triac1} dan analisis ketidakpastian \cite{lhs}.
 
+\chapter{Struktur Program}
+Tahapan rekayasa balik dimulai dengan membuka struktur program dan melihat keterkaitan antar fungsi yang terdapat di kode komputer THERMIX. Terdapat 4 program, masing-masing \texttt{THERMIX1.FOR} - \texttt{THERMIX4.FOR}. Subrutin dan fungsi pada masing program tersebut disajikan pada \tablename~\ref{tab:the1} - \tablename~\ref{tab:the2}. Deskripsi yang disajikan merupakan translasi bebas dari Bahasa Jerman menggunakan \href{https://translate.google.com/}{google translate}.
+
+\begin{table}[h!]
+  \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX1.FOR}}
+  \label{tab:the1}
+
+  \begin{center}
+    \begin{tabular}{p{3cm}|p{10cm}}
+    \toprule
+       Fungsi / Subrutin & Deskripsi\\ \midrule
+       ABEND & Membuat penanganan kesalahan \\
+       BILD & Lembar penciptaan buatan dan halaman akhir \\
+       BUBIL & Perhitungan sumber panas konvektif saat ini dan kompensasi komposisi ini. Hanya aktif jika sumber panas dibuat dengan $\alpha * f$ dan \texttt{TFLU} \\
+       CALT & Hitung suhu pada kondisi tunak \\
+       CALT1 & Menghitung suhu suhu padat yang homogen \\
+       CALT2 & Menghitung suhu padat heterous (temperatur zona bola) solusi TRISSIAG dari sistem persamaan penghapusan matriks (GAUSS) \\
+       CALT2H & Menghitung suhu padat heterous (temperatur zona bola) solusi sistem persamaan TRIDIAG matriks penghapusan (GAUSS) \\
+       CALTA & Menghitung temperatur padat heterous (\textit{stationary billing}) solusi sistem persamaan sebagai SR CALT2 (eliminasi matriks) \\
+       CALTAH & Menghitung temperatur padat heterous (\textit{stationary billing}) solusi sistem persamaan sebagai SR CALT2 (eliminasi matriks) \\
+       EXPLIZ & Perhitungan eksplisit ke fungsi panas \\
+       MAITHX & Program utama THERMIX, 50x80 tingkat perubahan \\
+       STEUER & Menetapkan suhu tengah, menciptakan plot waktu, temperatur corr. rangkaian dalam arah y \\ 
+       WTSTEU & Kendali penghapusan kinerja di pertukaran panas \\
+       \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[h!]
+  \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX2.FOR}}
+  \label{tab:the2}
+
+  \begin{center}
+    \begin{tabular}{p{3cm}|p{10cm}} \toprule
+    Fungsi / Subrutin & Deskripsi\\ \midrule
+    CALT3 & Perhitungan suhu pada heterous (temperatur zona bola) solusi sistem persamaan Gauss-Siedel. Hati-hati menggunakan $\rightarrow$ kapasitas panas*WK APH, tidak bekerja untuk \textit{flash ball} \\
+    \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+
 % Daftar Pustaka
 \bibliographystyle{IEEEtran}
 \bibliography{references}

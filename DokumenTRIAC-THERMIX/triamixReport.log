@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.30)  20 MAR 2019 15:40
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.1.30)  21 MAR 2019 16:00
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1323,7 +1323,7 @@ LaTeX Info: Redefining \nameref on input line 53.
 \openout2 = `sampul.aux'.
 
 (./sampul.tex
-<pics/logo.png, id=16, 318.18875pt x 321.2pt>
+<pics/logo.png, id=20, 318.18875pt x 321.2pt>
 File: pics/logo.png Graphic file (type png)
 <use pics/logo.png>
 Package pdftex.def Info: pics/logo.png  used on input line 12.
@@ -1394,50 +1394,76 @@ l.70 \chapter
 
 ]
 BAB 1.
-<pics/tools.png, id=51, 569.12625pt x 274.02374pt>
+<pics/tools.png, id=56, 569.12625pt x 274.02374pt>
 File: pics/tools.png Graphic file (type png)
 <use pics/tools.png>
 Package pdftex.def Info: pics/tools.png  used on input line 75.
 (pdftex.def)             Requested size: 284.56242pt x 137.01154pt.
-(./triamixReport.bbl [2
+[2
 
 pdfTeX warning (ext4): destination with the same identifier (name{figure.1.1}) 
 has been already used, duplicate ignored
 
 \AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
                                                   \fi \fi 
+l.85 \chapter
+             {Struktur Program} <./pics/tools.png (PNG copy)>]
+BAB 2.
+
+Underfull \hbox (badness 1048) in paragraph at lines 101--102
+\T1/ptm/m/n/10.95 lusi TRIS-SIAG dari sis-tem per-samaan peng-ha-pu-san ma-trik
+s
+ []
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(./triamixReport.bbl [3
+
+pdfTeX warning (ext4): destination with the same identifier (name{table.2.1}) h
+as been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
 l.1 \begin{thebibliography}{1}
-                               <./pics/tools.png (PNG copy)>])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 95.
- [3
+                              ] [4pdfTeX warning (ext4): destination with the s
+ame identifier (name{table.2.2}) has been already used, duplicate ignored
+
+\AtBegShi@Output ...ipout \box \AtBeginShipoutBox 
+                                                  \fi \fi 
+l.1 \begin{thebibliography}{1}
+                              ])
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 138.
+ [5
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 95.
-
-(./triamixReport.aux (./sampul.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 95.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 95.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 138.
+ (./triamixReport.aux (./sampul.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 138.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 138.
 Package rerunfilecheck Info: File `triamixReport.out' has not changed.
-(rerunfilecheck)             Checksum: 3CFCB1C78DEA25127CB9D9BE154DCF67;145.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 95.
+(rerunfilecheck)             Checksum: F810FB5A82ACE2A16FA7458B922771C9;196.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 138.
  ) 
 Here is how much of TeX's memory you used:
- 22252 strings out of 492982
- 399158 string characters out of 6134896
- 483941 words of memory out of 5000000
- 25468 multiletter control sequences out of 15000+600000
- 576478 words of font info for 65 fonts, out of 8000000 for 9000
+ 22268 strings out of 492982
+ 399295 string characters out of 6134896
+ 488103 words of memory out of 5000000
+ 25473 multiletter control sequences out of 15000+600000
+ 578891 words of font info for 71 fonts, out of 8000000 for 9000
  1230 hyphenation exceptions out of 8191
- 37i,7n,39p,10375b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 37i,11n,39p,10375b,399s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}</usr/share/texliv
-e/texmf-dist/fonts/type1/urw/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/times/utmbi8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/
-times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.p
-fb>
-Output written on triamixReport.pdf (6 pages, 105451 bytes).
+e/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texm
+f-dist/fonts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/
+type1/urw/symbol/usyr.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/
+utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmbi8a.pfb></u
+sr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texliv
+e/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on triamixReport.pdf (8 pages, 128539 bytes).
 PDF statistics:
- 96 PDF objects out of 1000 (max. 8388607)
- 80 compressed objects within 1 object stream
- 20 named destinations out of 1000 (max. 500000)
- 35 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 130 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 25 named destinations out of 1000 (max. 500000)
+ 43 words of extra memory for PDF output out of 10000 (max. 10000000)
 
