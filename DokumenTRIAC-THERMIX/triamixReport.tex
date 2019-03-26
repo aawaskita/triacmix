@@ -18,6 +18,8 @@
 \usepackage{rotating}
 \usepackage{pdflscape}
 \usepackage{subfigure}
+\usepackage[version=4]{mhchem}
+\usepackage{isotope}
 \DTMsetdatestyle{ddmmyyyy}
 \DTMsetup{datesep=--}
 \newcommand{\subtitle}[1]{%
@@ -83,7 +85,7 @@ Kode komputer THERMIX \cite{vsop1,vsop2} sebagai salah satu kode baku dalam anal
 Karenanya, perangkat lunak akan dikembangkan berdasarkan data referensi dan dokumentasi  \textbf{\cite{vsop1,vsop2}}. Hasil rekayasa balik akan berupa prototipe kode komputer/perangkat lunak yang terintegrasi dengan modul analisis keselamatan bahan bakar berbasis partikel triso \cite{triac1} dan analisis ketidakpastian \cite{lhs}.
 
 \chapter{Struktur Program}
-Tahapan rekayasa balik dimulai dengan membuka struktur program dan melihat keterkaitan antar fungsi yang terdapat di kode komputer THERMIX. Terdapat 4 program, masing-masing \texttt{THERMIX1.FOR} - \texttt{THERMIX4.FOR}. Subrutin dan fungsi pada masing program tersebut disajikan pada \tablename~\ref{tab:the1} - \tablename~\ref{tab:the2}. Deskripsi yang disajikan merupakan translasi bebas dari Bahasa Jerman menggunakan \href{https://translate.google.com/}{google translate}.
+Tahapan rekayasa balik dimulai dengan membuka struktur program dan melihat keterkaitan antar fungsi yang terdapat di kode komputer THERMIX. Terdapat 4 program, masing-masing \texttt{THERMIX1.FOR} - \texttt{THERMIX4.FOR}. Subrutin dan fungsi pada masing program tersebut disajikan pada \tablename~\ref{tab:the1} - \tablename~\ref{tab:the4}. Deskripsi yang disajikan merupakan translasi bebas dari Bahasa Jerman menggunakan \href{https://translate.google.com/}{google translate}.
 
 \begin{table}[h!]
   \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX1.FOR}}
@@ -118,12 +120,212 @@ Tahapan rekayasa balik dimulai dengan membuka struktur program dan melihat keter
   \begin{center}
     \begin{tabular}{p{3cm}|p{10cm}} \toprule
     Fungsi / Subrutin & Deskripsi\\ \midrule
-    CALT3 & Perhitungan suhu pada heterous (temperatur zona bola) solusi sistem persamaan Gauss-Siedel. Hati-hati menggunakan $\rightarrow$ kapasitas panas*WK APH, tidak bekerja untuk \textit{flash ball} \\
+    DDF1 & Tidak tersedia penjelasan \\
+    CALT3 & Perhitungan suhu pada heterous (temperatur zona bola) solusi sistem persamaan Gauss-Siedel. Hati-hati menggunakan $\rightarrow$ \texttt{kapasitas panas*WK} APH, tidak bekerja untuk \textit{flash ball} \\
+    EINL1 & Program \texttt{READOUT} untuk bagian program \texttt{HEATER} \\
+    GFIT & Perhitungan perubahan akurasi panas irradiasi \\
+    GRPR & Penetapan \texttt{GR*PR} untuk cetakan konveksi bebas, \texttt{P} harus disediakan \\
+    INTEST & Aktif dalam IFTEST=1 $\rightarrow$ angka minimum untuk uji masukan \\
+    IPLOG & Interpolasi logaritmik pada nilai konstan melampaui rentang definisi \\
+    ISOPLT & Plot iso-linear \\
+    ITPL & Interpolasi linear \\
+    KONST1 & Perhitungan kemampuan pemanasan dan fungsi geometri untuk \textit{shelves} \\
+    KOPFB & Program \textit{coupling} untuk suhu dan umpan balik XENON \\
+    KUEHLK & Tidak tersedia penjelasan\\
+    MARK & Tanda batas komposisi dari luaran grid besar \\
+    MIMAX & Menentukan minimum dan maksimum ruang grid terhubung \\
+    ORDNE1 & Tidak tersedia penjelasan \\
+    ORDNE2 & Pilih dari jumlah total 3 cm dukungan terbesar \\
+    PDFELD & Masalah besar yang dilakukan di sini, konsentrasi VSOP untuk release produk fisi \\
+    PRAIZ & Tidak tersedia penjelasan \\
+    PREIN & Pengendalian dan output sifat komposisi \\
+    PRFELD & Edisi grid yang hebat \\
+    PRINTT & Masalah grille kecil \\
+    READRZ & Masukan grille aksial dan radial \\
     \bottomrule
     \end{tabular}
   \end{center}
 \end{table}
 
+\begin{table}[h!]
+  \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX3.FOR}}
+  \label{tab:the3}
+  \begin{center}
+    \begin{tabular}{p{3cm}|p{10cm}} \toprule
+    Fungsi / Subrutin & Deskripsi\\ \midrule
+      LAGRAS & Interpolasi lagrange \\
+      POWTHX & Menerima layanan VSOP + EVTL konsentrasi terhadap grid thermix \\
+      PRTEIN & Tidak tersedia penjelasan \\
+      REDUM & Perhitungan daya termal (lokasi, waktu) \\
+      REDUN & Perhitungan kekuatan termal (lokasi, waktu) untuk OTTO \\
+      REDUZ & Pengendalian perhitungan daya panas \\
+      REFL & Mengatur Kondisi RIM adiabatis pada grid \\
+      REIPO & Program interpolasi (ke transmisi grid) \\
+      RUND & Tidak tersedia penjelasan \\
+      SECURE & Membuat berkas untuk \textit{restart}\\
+      SETBER & Tidak tersedia penjelasan \\
+      SETD & Set dosis cepat \\
+      SETE & Set kinerja daya dan konsentrasi \\
+      SETF1 & Membaca grille thermix \\
+      SETF2 & Membaca ketebalan zona inti \\
+      SETK1 & Menempatkan grille thermix dengan komposisi \\
+      SETSTR & Mengidentifikasi dan memeriksa kolom beam \\
+      SETT & Konfigurasi suhu awal \\
+      SETZT1 & Mengalihkan suhu awal yang diambil dengan bantuan grille\\
+      VOLMAT & Volume matriks \texttt{VSOP-THERMIX*BIRGIT} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+\begin{table}[h!]
+  \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX4.FOR}}
+  \label{tab:the4}
+  \begin{center}
+    \begin{tabular}{p{3cm}|p{10cm}} \toprule
+    Fungsi / Subrutin & Deskripsi\\ \midrule
+    EINL2 & Program sub \textit{dummy} untuk masukan \texttt{KINEX} \\
+    KINEX & Program sub \textit{dummy} faktor tanpa \texttt{KINEX} (sub rutin kosong) \\
+    KOPREG & Program sub \textit{dummy} untuk akun tanpa pengendalian (sub rutin kosong) \\
+    SUCHET & Mendefinisikan lokasi tugas het-grid dan pengendalian \texttt{IFBH} \\
+    SUCHMI & Menetapkan panel kendali \texttt{IFBH} campuran \\
+    SYMBOL & Menetapkan \texttt{IFBER} \\
+    TFELD & Kendali perhitungan iteratif suhu padat \\
+    TNEU & Terkait relaksasi \\
+    TPROZ & Membuat temperatur-volume analisis untuk teras dan menghitung suhu bahan bakar mediumdan moderator (untuk daerah \texttt{HET}) \\
+    VORKON & Unsur hitung quarter-flaechen \\
+    WDUKON & Menghitung aksesibilitas panas \\
+    WKAP & Menghitung kapasitas panas untuk setiap waktu, untuk zone \textit{mesh} dan bola \\  
+    WKN & Memperhitungkan unsur dengan sumber panas konvektif \\
+    WKPT & Menghitung $\rho * C$ untuk meteri yang berbeda untuk \ce{Al2O3} dan tidak tergantung pada temperatur \\
+    WPKON & Menghitung sumber panas konvektif, kerapatan sumber dan volumen asosiasi \\
+    XKORR & Tidak tersedia penjelasan \\
+    XLAM & Menghitung aksesibilitas panas \\
+    XLAM1 & Menghitung aksesibilitas panas anisotropis \\ 
+    XLAMT & Menghitung konduktivitas panas \\
+    XLAMT1 & Karakterisasi temperatur anisotropis dan termperatur resistan pada arah-Y \\
+    ZKUGL & Menghitung jumlah \ce{Be} di mesin HET dan mesin campuran \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Selain itu, terdapat juga terdapat juga fungsi/sub rutin yang didefinisikan pada program di luar \texttt{THERMIX}. \tablename~\ref{tab:anomali} menyajikan fungsi-fungsi tersebut.
+
+\begin{table}[h!]
+  \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX4.FOR}}
+  \label{tab:anomali}
+  \begin{center}
+    \begin{tabular}{p{2cm}|p{2.75cm}|p{3cm}|p{4.5cm}} \toprule
+    Sub rutin & Dipanggil dari & Didefinisikan di & Keterangan \\ \midrule
+    EINL & \texttt{THERMIX1.FOR} & \texttt{KONVEK1.FOR} & didefinisikan menggunakan \texttt{SUBROUTINE} \\
+    FRIST & \texttt{THERMIX1.FOR} & \texttt{VSOP0.FOR} & didefinisikan menggunakan \texttt{SUBROUTINE} \\
+    KONVEK & \texttt{THERMIX1.FOR} & \texttt{KONVEK1.FOR} & didefinisikan menggunakan \texttt{SUBROUTINE} \\
+    WTSTE1 & \texttt{THERMIX1.FOR} & \texttt{THERMIX1.FOR} & dipanggil dengan \texttt{ENTRY}, tanpa definisi (kosong)\\
+    NACHW & \texttt{THERMIX1.FOR} & \texttt{DECHEAT.FOR} & didefinisikan menggunakan \texttt{SUBROUTINE} \\
+    DDF & \texttt{THERMIX1.FOR} & \texttt{THERMIX1.FOR} (dalam fungsi yang sama) & tidak ditemukan fungsi/sub rutin yang pernah menggunakannya \\
+    VOLMA1 & \texttt{THERMIX3.FOR} & \texttt{THERMIX3.FOR}, sub rutin VOLMAT & dipanggil dengan \texttt{ENTRY}\\
+    VOLMA2 & \texttt{THERMIX3.FOR} & \texttt{THERMIX3.FOR}, sub rutin VOLMAT & dipanggil dengan \texttt{ENTRY}\\
+    FRIST & \texttt{THERMIX4.FOR} & \texttt{VSOP0.FOR} & didefinisikan menggunakan \texttt{SUBROUTINE} \\
+      \bottomrule
+    \end{tabular}
+  \end{center}
+\end{table}
+
+Keterkaitan antar fungsi/sub rutin ditampilkan secara grafis disajikan pada \figurename~\ref{fig:maithx}. Penyajian tersebut menggunakan konvensi:
+\begin{itemize}
+  \item merah $\rightarrow$ berasal dari \texttt{THERMIX1.FOR}
+  \item kuning $\rightarrow$ berasal dari \texttt{THERMIX2.FOR}
+  \item hijau $\rightarrow$ berasal dari \texttt{THERMIX3.FOR}
+  \item biru $\rightarrow$ berasal dari \texttt{THERMIX4.FOR}
+  \item bayangan oranye $\rightarrow$ memiliki ketergantungan fungsi/sub rutin
+  \item secara umum, panah menunjukkan ketergantungan yang setara antara fungsi/sub rutin di lapisan pertama dengan lapisan-lapisan di bawahnya. Seperti ditunjukkan pada \figurename~\ref{fig:maithx}, sub rutin \texttt{MAITHX} membawahi semua sub rutin di bawahnya secara langsung, kecuali \texttt{SETBER}, \texttt{ABEND} dan \texttt{BILD}.
+\end{itemize}
+
+\begin{figure}
+  \begin{center}
+    \includegraphics[scale=.5]{../maithx.png}
+    \caption{Fungsi/sub rutin \texttt{MAITHX}, terbesar dari yang didefinisikan di \texttt{THERMIX}}
+    \label{fig:maithx}
+  \end{center}
+\end{figure}
+
+\vspace*{1cm}
+Kemudian, sub rutin di bawah \texttt{MAITHX} yang membawahi sub rutin lain adalah:
+\begin{enumerate}
+  \item \texttt{EINL1} (\figurename~\ref{fig:einl1}),
+  \item \texttt{SETE} (\figurename~\ref{fig:sete}),
+  \item \texttt{SUCHET} (\figurename~\ref{fig:suchet}),
+  \item \texttt{KONST1} (\figurename~\ref{fig:konst1}),
+  \item \texttt{ISOPLT} (\figurename~\ref{fig:isoplt}) dan
+  \item \texttt{STEUER} (\figurename~\ref{fig:steuer}).
+\end{enumerate}
+        
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../einl1.png}
+    \caption{Sub rutin \texttt{EINL1}}
+    \label{fig:einl1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../sete.png}
+    \caption{Sub rutin \texttt{SETE}}
+    \label{fig:sete}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../suchet.png}
+    \caption{Sub rutin \texttt{SUCHET}}
+    \label{fig:suchet}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../konst1.png}
+    \caption{Sub rutin \texttt{KONST1}}
+    \label{fig:konst1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../isoplt.png}
+    \caption{Sub rutin \texttt{ISOPLT}}
+    \label{fig:isoplt}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../steuer.png}
+    \caption{Sub rutin \texttt{STEUER}}
+    \label{fig:steuer}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../konst1.png}
+    \caption{Sub rutin \texttt{KONST1}}
+    \label{fig:konst1}
+  \end{center}
+\end{figure}
+
+Untuk sub rutin \texttt{SETSTR} tidak ditampilkan karena hanya membawahi \texttt{ABEND} yang sudah ditampilkan di \figurename~\ref{fig:maithx}. sedangkan sub rutin \texttt{SETT} bersama sub rutin \texttt{SETF1}, \texttt{SETF2}, \texttt{SETK1} ditampilkan pada \figurename~\ref{fig:varset}. Sub rutin tersebut sama-sama membawahi sub rutin \texttt{ABEND}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../varSET.png}
+    \caption{Sub rutin \texttt{VARSET}}
+    \label{fig:varset}
+  \end{center}
+\end{figure}
 
 % Daftar Pustaka
 \bibliographystyle{IEEEtran}
