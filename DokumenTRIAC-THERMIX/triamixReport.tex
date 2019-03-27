@@ -40,6 +40,8 @@
 \renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
 % 
 \include{hype.indonesia}
+\definecolor{amber}{rgb}{0.96, 0.51, 0.13}
+\definecolor{biruMuda}{rgb}{0.45, 0.62, 0.78}
 
 \renewcommand{\contentsname}{Daftar Isi}
 \renewcommand{\chaptername}{BAB}
@@ -234,11 +236,12 @@ Selain itu, terdapat juga terdapat juga fungsi/sub rutin yang didefinisikan pada
 
 Keterkaitan antar fungsi/sub rutin ditampilkan secara grafis disajikan pada \figurename~\ref{fig:maithx}. Penyajian tersebut menggunakan konvensi:
 \begin{itemize}
-  \item merah $\rightarrow$ berasal dari \texttt{THERMIX1.FOR}
-  \item kuning $\rightarrow$ berasal dari \texttt{THERMIX2.FOR}
-  \item hijau $\rightarrow$ berasal dari \texttt{THERMIX3.FOR}
-  \item biru $\rightarrow$ berasal dari \texttt{THERMIX4.FOR}
-  \item bayangan oranye $\rightarrow$ memiliki ketergantungan fungsi/sub rutin
+  \item \textcolor{red}{merah} $\rightarrow$ terdefinisi di \texttt{THERMIX1.FOR}
+  \item \textcolor{yellow}{kuning} $\rightarrow$ terdefinisi di \texttt{THERMIX2.FOR}
+  \item \textcolor{green}{hijau} $\rightarrow$ terdefinisi di \texttt{THERMIX3.FOR}
+  \item \textcolor{blue}{biru} $\rightarrow$ terdefinisi di \texttt{THERMIX4.FOR}
+  \item \textcolor{biruMuda}{biru muda} $\rightarrow$ terdifinisi di program selain \texttt{THERMIX1.FOR} s/d \texttt{THERMIX4.FOR}
+  \item bayangan \textcolor{amber}{oranye} $\rightarrow$ memiliki ketergantungan terhadap fungsi/sub rutin di bawahnya, fungsi/sub rutin tersebut dapat berada di \texttt{THERMIX1.FOR} s/d \texttt{THERMIX4.FOR} atau bahkan di luar keempat program tersebut.
   \item secara umum, panah menunjukkan ketergantungan yang setara antara fungsi/sub rutin di lapisan pertama dengan lapisan-lapisan di bawahnya. Seperti ditunjukkan pada \figurename~\ref{fig:maithx}, sub rutin \texttt{MAITHX} membawahi semua sub rutin di bawahnya secara langsung, kecuali \texttt{SETBER}, \texttt{ABEND} dan \texttt{BILD}.
 \end{itemize}
 
@@ -257,6 +260,7 @@ Kemudian, sub rutin di bawah \texttt{MAITHX} yang membawahi sub rutin lain adala
   \item \texttt{SETE} (\figurename~\ref{fig:sete}),
   \item \texttt{SUCHET} (\figurename~\ref{fig:suchet}),
   \item \texttt{KONST1} (\figurename~\ref{fig:konst1}),
+  \item \texttt{TFELD} (\figurename~\ref{fig:tfeld}),
   \item \texttt{ISOPLT} (\figurename~\ref{fig:isoplt}) dan
   \item \texttt{STEUER} (\figurename~\ref{fig:steuer}).
 \end{enumerate}
@@ -290,6 +294,14 @@ Kemudian, sub rutin di bawah \texttt{MAITHX} yang membawahi sub rutin lain adala
     \includegraphics[scale=.5]{../konst1.png}
     \caption{Sub rutin \texttt{KONST1}}
     \label{fig:konst1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../tfeld.png}
+    \caption{Sub rutin \texttt{TFELD}}
+    \label{fig:tfeld}
   \end{center}
 \end{figure}
 

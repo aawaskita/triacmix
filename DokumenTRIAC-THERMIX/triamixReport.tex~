@@ -250,18 +250,18 @@ Keterkaitan antar fungsi/sub rutin ditampilkan secara grafis disajikan pada \fig
   \end{center}
 \end{figure}
 
+\vspace*{1cm}
 Kemudian, sub rutin di bawah \texttt{MAITHX} yang membawahi sub rutin lain adalah:
 \begin{enumerate}
   \item \texttt{EINL1} (\figurename~\ref{fig:einl1}),
   \item \texttt{SETE} (\figurename~\ref{fig:sete}),
   \item \texttt{SUCHET} (\figurename~\ref{fig:suchet}),
   \item \texttt{KONST1} (\figurename~\ref{fig:konst1}),
-  \item \texttt{ISOPLT} (\figurename~\ref{fig:isoplt}),
-  \item \texttt{STEUER} (\figurename~\ref{fig:steuer}) dan
-  \item \texttt{SETT} (\figurename~\ref{fig:sett}).
+  \item \texttt{ISOPLT} (\figurename~\ref{fig:isoplt}) dan
+  \item \texttt{STEUER} (\figurename~\ref{fig:steuer}).
 \end{enumerate}
         
-\begin{figure}
+\begin{figure}[h!]
   \begin{center}
     \includegraphics[scale=.5]{../einl1.png}
     \caption{Sub rutin \texttt{EINL1}}
@@ -269,7 +269,7 @@ Kemudian, sub rutin di bawah \texttt{MAITHX} yang membawahi sub rutin lain adala
   \end{center}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
   \begin{center}
     \includegraphics[scale=.5]{../sete.png}
     \caption{Sub rutin \texttt{SETE}}
@@ -277,13 +277,56 @@ Kemudian, sub rutin di bawah \texttt{MAITHX} yang membawahi sub rutin lain adala
   \end{center}
 \end{figure}
 
-\begin{figure}
+\begin{figure}[h!]
   \begin{center}
     \includegraphics[scale=.5]{../suchet.png}
     \caption{Sub rutin \texttt{SUCHET}}
     \label{fig:suchet}
   \end{center}
 \end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../konst1.png}
+    \caption{Sub rutin \texttt{KONST1}}
+    \label{fig:konst1}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../isoplt.png}
+    \caption{Sub rutin \texttt{ISOPLT}}
+    \label{fig:isoplt}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../steuer.png}
+    \caption{Sub rutin \texttt{STEUER}}
+    \label{fig:steuer}
+  \end{center}
+\end{figure}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../konst1.png}
+    \caption{Sub rutin \texttt{KONST1}}
+    \label{fig:konst1}
+  \end{center}
+\end{figure}
+
+Untuk sub rutin \texttt{SETSTR} tidak ditampilkan karena hanya membawahi \texttt{ABEND} yang sudah ditampilkan di \figurename~\ref{fig:maithx}. sedangkan sub rutin \texttt{SETT} bersama sub rutin \texttt{SETF1}, \texttt{SETF2}, \texttt{SETK1} ditampilkan pada \figurename~\ref{fig:varset}. Sub rutin tersebut sama-sama membawahi sub rutin \texttt{ABEND}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{../varSET.png}
+    \caption{Sub rutin \texttt{VARSET}}
+    \label{fig:varset}
+  \end{center}
+\end{figure}
+
 % Daftar Pustaka
 \bibliographystyle{IEEEtran}
 \bibliography{references}

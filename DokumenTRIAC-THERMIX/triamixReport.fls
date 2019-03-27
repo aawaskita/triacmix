@@ -281,10 +281,10 @@ INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfchan/pzcmi8r.tfm
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8c.tfm
-INPUT ../maithx.png
-INPUT ../maithx.png
-INPUT ../maithx.png
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8c.vf
+INPUT ../maithx.png
+INPUT ../maithx.png
+INPUT ../maithx.png
 INPUT ../einl1.png
 INPUT ../einl1.png
 INPUT ../einl1.png
@@ -297,6 +297,9 @@ INPUT ../suchet.png
 INPUT ../konst1.png
 INPUT ../konst1.png
 INPUT ../konst1.png
+INPUT ../tfeld.png
+INPUT ../tfeld.png
+INPUT ../tfeld.png
 INPUT ../isoplt.png
 INPUT ../isoplt.png
 INPUT ../isoplt.png
