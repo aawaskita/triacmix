@@ -1,6 +1,6 @@
 import globalVar
 
-def calt(i,n, ifk01):
+def CALT(i,n, ifk01):
 	tnn=globalVar.calc['t'][i][n-1]
 	tff=0.1
 	if ifk01==-1:

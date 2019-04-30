@@ -2,3 +2,5 @@
 \contentsline {chapter}{Daftar Program}{iii}{section*.4}
 \contentsline {chapter}{\numberline {1}Pendahuluan}{2}{chapter.1}
 \contentsline {chapter}{\numberline {2}Struktur Program}{3}{chapter.2}
+\contentsline {section}{\numberline {2.1}Diagram konteks}{3}{section.2.1}
+\contentsline {section}{\numberline {2.2}Kebutuhan fungsi}{3}{section.2.2}

@@ -63,7 +63,7 @@ Print['br']=[]
 Print['phip']=[]
 Print['radp']=[]
 Print['indgeo']=0
-"""add steuer subroutine"""
+"""add steuer,calt subroutine"""
 
 reg={}
 reg['imax']=0
@@ -104,7 +104,7 @@ calc['tq']=[]
 calc['ifwq']=[]
 calc['tflu']=[]
 calc['bu1']=[]
-"""and steuer subroutine"""
+"""and steuer, calt subroutine"""
 
 zus={}
 zus['ifber']=[]
@@ -346,11 +346,6 @@ het2['zkug']=[]
 het2['volz']=[]
 het2['vk']=[]
 
-berhet={}
-berhet['thet']=[]
-berhet['wwk']=[]
-berhet['wkaph']=[]
-
 bheter={}
 bheter['thalt']=[]
 bheter['wqn']=[]
@@ -411,6 +406,11 @@ zwang={}
 zwang['stzuk']=[]
 zwang['tflvor']=[]
 zwang['ifnetz']=0
+
+setwd={}
+setwd['wpr']=[] """31 elements"""
+setwd['dos']=[] """31 elements"""
+setwd['zdos']=[] """80 elements"""
 
 """tambahan utk variabel mputa yang ada di wsteu subroutine"""
 mputa['dtau']=0
@@ -487,6 +487,12 @@ fakz1a=[] """80 elements"""
 feld=[] """50x80 elements"""
 wkph=[] """5 elements"""
 tm=[] """undefined yet, its size differ from a function to another function"""
+the=[] """5 element, defined in CALT and friens sub routine"""
+tm=[] """defined at THERMIX2.FOR, consist of 5 elements"""
+wc=[] """defined at THERMIX2.FOR, consist of 5 elements"""
+xinh=[] """defined at THERMIX2.FOR, consist of 5 elements"""
+xkoeff=[] """defined at THERMIX2.FOR, consist of 5x5 elements"""
+x=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 """
 Temporary file, intended to anticipate N61 writing process.
 """

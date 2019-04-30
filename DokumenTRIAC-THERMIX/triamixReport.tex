@@ -87,7 +87,20 @@ Kode komputer THERMIX \cite{vsop1,vsop2} sebagai salah satu kode baku dalam anal
 Karenanya, perangkat lunak akan dikembangkan berdasarkan data referensi dan dokumentasi  \textbf{\cite{vsop1,vsop2}}. Hasil rekayasa balik akan berupa prototipe kode komputer/perangkat lunak yang terintegrasi dengan modul analisis keselamatan bahan bakar berbasis partikel triso \cite{triac1} dan analisis ketidakpastian \cite{lhs}.
 
 \chapter{Struktur Program}
-Tahapan rekayasa balik dimulai dengan membuka struktur program dan melihat keterkaitan antar fungsi yang terdapat di kode komputer THERMIX. Terdapat 4 program, masing-masing \texttt{THERMIX1.FOR} - \texttt{THERMIX4.FOR}. Subrutin dan fungsi pada masing program tersebut disajikan pada \tablename~\ref{tab:the1} - \tablename~\ref{tab:the4}. Deskripsi yang disajikan merupakan translasi bebas dari Bahasa Jerman menggunakan \href{https://translate.google.com/}{google translate}.
+
+\section{Diagram konteks}
+Sistem yang akan dikembangkan memiliki diagram konteks level 0 seperti pada \figurename~\ref{fig:level0}. Triamix akan menerima masukan berupa distribusi rapat daya dan menghasilkan distribusi temperatur. Distribusi temperatur tersebut selanjutnya akan menjadi masukan bagi TRIAC-BATAN yang sebelumnya dikembangkan \cite{triac1}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.4]{pics/contextLevel0.png}
+    \caption{Konteks level 0 dari sistem Triamix}
+    \label{fig:level0}
+  \end{center}
+\end{figure}
+
+\section{Kebutuhan fungsi}
+Tahapan selanjutnya adalah membuka struktur program dan melihat keterkaitan antar fungsi yang terdapat di kode komputer THERMIX. Terdapat 4 program, masing-masing \texttt{THERMIX1.FOR} - \texttt{THERMIX4.FOR}. Subrutin dan fungsi pada masing program tersebut disajikan pada \tablename~\ref{tab:the1} - \tablename~\ref{tab:the4}. Deskripsi yang disajikan merupakan translasi bebas dari Bahasa Jerman menggunakan \href{https://translate.google.com/}{google translate}.
 
 \begin{table}[h!]
   \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX1.FOR}}
@@ -318,14 +331,6 @@ Kemudian, sub rutin di bawah \texttt{MAITHX} yang membawahi sub rutin lain adala
     \includegraphics[scale=.5]{../steuer.png}
     \caption{Sub rutin \texttt{STEUER}}
     \label{fig:steuer}
-  \end{center}
-\end{figure}
-
-\begin{figure}[h!]
-  \begin{center}
-    \includegraphics[scale=.5]{../konst1.png}
-    \caption{Sub rutin \texttt{KONST1}}
-    \label{fig:konst1}
   \end{center}
 \end{figure}
 
