@@ -1,5 +1,6 @@
 import globalVar
 
+"""A function"""
 def CALT(i,n, ifk01):
 	tnn=globalVar.calc['t'][i][n-1]
 	tff=0.1
