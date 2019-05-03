@@ -145,7 +145,7 @@ berhet={}
 berhet['thet']=[]
 berhet['wwk']=[]
 berhet['ifbh']=[]
-berhet['wkaph']=[]
+berhet['wkaph']=[] """20x20x5x2 -> 4 dimensional variable"""
 
 feld2={}
 feld2['idiff']=0
@@ -234,7 +234,7 @@ ui2={}
 ui2['ifdf']=0
 
 """
-wtsteu subroutine
+w2eu subroutine
 """
 komvak={}
 komvak['komvar']=0
@@ -467,6 +467,22 @@ bezei={}
 bezei['bi']=0
 bezei['bn']=0
 
+"""Print1 subroutine"""
+Print1={}
+Print1['title']=''
+Print1['ndi']=[]
+Print1['ndj']=[]
+Print1['ndk']=[]
+Print1['yz']=0
+Print1['xz']=0
+Print1['xzz']=0
+Print1['yzz']=0
+Print1['n']=0
+
+"""CALT3 subroutin"""
+iterh['dttt']=0
+iterh['ihmax']=0
+
 """
 Dimensions
 """
@@ -486,8 +502,8 @@ fakz2=[] """80 elements"""
 fakz1a=[] """80 elements"""
 feld=[] """50x80 elements"""
 wkph=[] """5 elements"""
-tm=[] """undefined yet, its size differ from a function to another function"""
-the=[] """5 element, defined in CALT and friens sub routine"""
+the=[] """5 element, defined in CALT and friends sub routine"""
+tha=[] """5 element, defined in CALTA and CALT2 sub routine"""
 tm=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 wc=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 xinh=[] """defined at THERMIX2.FOR, consist of 5 elements"""
