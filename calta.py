@@ -29,5 +29,4 @@ def CALTA(i,n,ifkO1):
 	for k in range(nz):
 		globalVar.berhet['thet'][i][n][k] = globalVar.the[k]
 		
-	TMITL = TMITL + BLV * THETB(I,N,K1)
 	globalVar.blindl['tmitl'] = globalVar.blindl['tmitl'] + globalVar.blindl['blv'] * globalVar.berhet['thet'][i][n][k1]
