@@ -509,6 +509,7 @@ wc=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 xinh=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 xkoeff=[] """defined at THERMIX2.FOR, consist of 5x5 elements"""
 x=[] """defined at THERMIX2.FOR, consist of 5 elements"""
+"""tneu=[] 2D array which is the size is currently unknown, its initial name is the same with a function. In this code, the function will be named in capital"""
 """
 Temporary file, intended to anticipate N61 writing process.
 """
