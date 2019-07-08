@@ -258,7 +258,7 @@ Keterkaitan antar fungsi/sub rutin ditampilkan secara grafis disajikan pada \fig
   \item secara umum, panah menunjukkan ketergantungan yang setara antara fungsi/sub rutin di lapisan pertama dengan lapisan-lapisan di bawahnya. Seperti ditunjukkan pada \figurename~\ref{fig:maithx}, sub rutin \texttt{MAITHX} membawahi semua sub rutin di bawahnya secara langsung, kecuali \texttt{SETBER}, \texttt{ABEND} dan \texttt{BILD}.
 \end{itemize}
 
-\begin{figure}
+\begin{figure}[h!]
   \begin{center}
     \includegraphics[scale=.5]{../maithx.png}
     \caption{Fungsi/sub rutin \texttt{MAITHX}, terbesar dari yang didefinisikan di \texttt{THERMIX}}
@@ -344,6 +344,28 @@ Untuk sub rutin \texttt{SETSTR} tidak ditampilkan karena hanya membawahi \texttt
   \end{center}
 \end{figure}
 
+\section{Diagram alir data level 1}
+Diagram yang disajikan pada Gambar \ref{fig:level1} adalah penjabaran dari diagram konteks yang disajikan di Gambar \ref{fig:level0}. Triamix harus menyediakan sub rutin yang dapat menerima informasi rapat daya berikut informasi pendukung berupa dimensi reaktor pada arah radial dan
+axial, lengkap dengan jumlah \textit{mesh} pada kedua arah tersebut. Untuk informasi rapat daya, Triamix dirancang untuk dapat membacanya dari berkas teks berisi matriks dua dimensi yang. Jumlah \textit{mesh} di arah radial harus sama dengan jumlah kolom dalam informasi rapat daya. Demikian juga dengan jumlah \textit{mesh} di arah axial, harus sama dengan jumlah baris dalam informasi rapat daya. Sub rutin tersebut dalam Gambar \ref{fig:level1} merupakan sub rutin 1.1, \textit{Input Adapter}. Sedangkan diagram 1.3, \textit{Output Adapter} merupakan sub rutin yang
+memformat hasil perhitungan distribusi temperatur sesuai dengan karakterisktik masukan TRIAC-BATAN \cite{triac1}.
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{pics/level1.png}
+    \caption{Diagram alir data level 1}
+    \label{fig:level1}
+  \end{center}
+\end{figure}
+
+Sub rutin perhitungan distribusi temperatur akan dijalankan oleh sub rutin 1.2, \texttt{THERMIX}. Sub rutin tersebut adalah sub rutin \texttt{MAITHX} yang disajikan pada Gambar \ref{fig:maithx}. Sub rutin \texttt{MAITHX} menerima empat argumen, masing-masing adalah N200, NXS, NDR dan KMAT. Selanjutnya, sub rutin STEUER menerima argumen IFKON, ITLAM, TDIFF, NLOOP, IFRED, IFZW, ITM3, CP0, IFTEST, NHET, ZEITH, XFR, IEXPR, N200, NDR, NXS, POV, ZF, NRY, QNW, DELDZ, QTHX, dan WTGINT. Sub rutin \texttt{STEUER} disajikan pada Gambar \ref{fig:steuer}. Terakhir, sub rutin \texttt{TFELD} akan menerima argumen ITLAM, OVRM, IFKO1, IFWARN, CP0, IFZENT. Sub rutin \texttt{TFELD} disajikan pada Gambar \ref{fig:tfeld}.
+
+
+\chapter{Rancangan Pengujian}
+Pengujian yang akan dilakukan pada Triamix adalah white box testing \cite{whitebox,iso}. Pengujian secara white box meliputi:
+\begin{itemize}
+  \item \textit{Unit testing}: merupakan pengujian unit perangkat keras atau lunak, maupun kelompok unitnya. Dalam hal ini, pengujian hanya akan difokuskan pada pengujian setiap fungsi dan modul.
+  \item \textit{Integration testing}: merupakan pengujian terintegrasi antar fungsi dan modul. Validasinya dilakukan terhadap hasil dari berkas masukan yang sama seperti telah dijelaskan dalam dokumen kebutuhan.
+\end{itemize}
 % Daftar Pustaka
 \bibliographystyle{IEEEtran}
 \bibliography{references}

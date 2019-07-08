@@ -33,9 +33,12 @@ K.~Verfondern, J.~Cao, T.~Liu, and H.-J. Allelein, ``Conclusions from v\&v
 \BIBentrySTDinterwordspacing
 
 \bibitem{triac1}
-A.~A. Waskita and T.~Setiadipura, ``The development of triac-batan: a triso
-  fuel performance analysis code,'' in \emph{Proceeding of Symposium of
-  Emerging Nuclear Technology and Engineering Novelty}, 2018.
+\BIBentryALTinterwordspacing
+A.~A. Waskita and T.~Setiadipura, ``The development of {TRIAC}-{BATAN}: a triso
+  fuel performance analysis code,'' vol. 1198, no.~2.\hskip 1em plus 0.5em
+  minus 0.4em\relax {IOP} Publishing, apr 2019, p. 022035. [Online]. Available:
+  \url{https://doi.org/10.1088%2F1742-6596%2F1198%2F2%2F022035}
+\BIBentrySTDinterwordspacing
 
 \bibitem{vsop1}
 H.~B. K.~J.~R\"{u}tten, K. A.~Haas and W.~Scherer, ``V.s.o.p (99/05) computer
@@ -51,5 +54,13 @@ K.~A.~H. K.~J.~R\"{u}tten and C.~Pohl, ``Computer code system v.s.o.p (99/11)
 A.~A. Waskita, N.~A. Wahanani, A.~Purwaningsih, and T.~Setiadipura, ``Study on
   effect of latin hypercube sampling method in triso fuel performance
   analysis,'' in \emph{Proceeding of HTR 2018}, 2018.
+
+\bibitem{whitebox}
+L.~Williams, ``White-box testing,''
+  http://agile.csc.ncsu.edu/SEMaterials/WhiteBox.pdf, accessed: 2016-03-15.
+
+\bibitem{iso}
+``Systems and software engineering -- vocabulary,'' \emph{ISO/IEC/IEEE
+  24765:2010(E)}, pp. 1--418, Dec 2010.
 
 \end{thebibliography}

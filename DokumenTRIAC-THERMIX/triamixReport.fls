@@ -316,10 +316,13 @@ INPUT ../steuer.png
 INPUT ../varSET.png
 INPUT ../varSET.png
 INPUT ../varSET.png
-INPUT triamixReport.bbl
-INPUT triamixReport.bbl
 INPUT /usr/share/texlive/texmf-dist/fonts/vf/adobe/times/ptmr8t.vf
 INPUT /usr/share/texlive/texmf-dist/fonts/tfm/adobe/times/ptmr8r.tfm
+INPUT pics/level1.png
+INPUT ./pics/level1.png
+INPUT ./pics/level1.png
+INPUT triamixReport.bbl
+INPUT triamixReport.bbl
 INPUT triamixReport.aux
 INPUT sampul.aux
 INPUT sampul.aux

@@ -12,51 +12,53 @@ Database file #1: references.bib
 -- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--empty booktitle in triac1
 Name 1 in "K. J. R\"{u}tten, K. A. Haas, H. Brockmann, and W. Scherer" has a comma at the end for entry vsop1
 while executing---line 4725 of file IEEEtran.bst
 Name 1 in "K. J. R\"{u}tten, K. A. Haas, and C. Pohl" has a comma at the end for entry vsop2
 while executing---line 4725 of file IEEEtran.bst
+Warning--empty author in iso
 
 Done.
-You've used 6 entries,
+You've used 8 entries,
             3975 wiz_defined-function locations,
-            830 strings with 8327 characters,
-and the built_in function-call counts, 3306 in all, are:
-= -- 259
-> -- 77
-< -- 9
-+ -- 36
-- -- 16
-* -- 157
-:= -- 573
-add.period$ -- 12
-call.type$ -- 6
-change.case$ -- 7
-chr.to.int$ -- 21
-cite$ -- 6
-duplicate$ -- 260
-empty$ -- 281
-format.name$ -- 22
-if$ -- 718
+            846 strings with 8572 characters,
+and the built_in function-call counts, 4536 in all, are:
+= -- 369
+> -- 87
+< -- 18
++ -- 43
+- -- 17
+* -- 213
+:= -- 766
+add.period$ -- 17
+call.type$ -- 8
+change.case$ -- 10
+chr.to.int$ -- 36
+cite$ -- 10
+duplicate$ -- 363
+empty$ -- 379
+format.name$ -- 23
+if$ -- 1001
 int.to.chr$ -- 0
-int.to.str$ -- 6
-missing$ -- 59
-newline$ -- 40
-num.names$ -- 6
-pop$ -- 142
+int.to.str$ -- 8
+missing$ -- 76
+newline$ -- 48
+num.names$ -- 7
+pop$ -- 182
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 2
-skip$ -- 256
+skip$ -- 354
 stack$ -- 0
-substring$ -- 57
-swap$ -- 178
-text.length$ -- 2
+substring$ -- 106
+swap$ -- 259
+text.length$ -- 6
 text.prefix$ -- 0
 top$ -- 5
 type$ -- 0
-warning$ -- 0
-while$ -- 9
-width$ -- 7
-write$ -- 76
+warning$ -- 2
+while$ -- 14
+width$ -- 9
+write$ -- 97
 (There were 2 error messages)
