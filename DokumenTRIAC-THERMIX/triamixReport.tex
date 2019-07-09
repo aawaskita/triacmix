@@ -357,7 +357,15 @@ memformat hasil perhitungan distribusi temperatur sesuai dengan karakterisktik m
   \end{center}
 \end{figure}
 
-Sub rutin perhitungan distribusi temperatur akan dijalankan oleh sub rutin 1.2, \texttt{THERMIX}. Sub rutin tersebut adalah sub rutin \texttt{MAITHX} yang disajikan pada Gambar \ref{fig:maithx}. Sub rutin \texttt{MAITHX} menerima empat argumen, masing-masing adalah N200, NXS, NDR dan KMAT. Selanjutnya, sub rutin STEUER menerima argumen IFKON, ITLAM, TDIFF, NLOOP, IFRED, IFZW, ITM3, CP0, IFTEST, NHET, ZEITH, XFR, IEXPR, N200, NDR, NXS, POV, ZF, NRY, QNW, DELDZ, QTHX, dan WTGINT. Sub rutin \texttt{STEUER} disajikan pada Gambar \ref{fig:steuer}. Terakhir, sub rutin \texttt{TFELD} akan menerima argumen ITLAM, OVRM, IFKO1, IFWARN, CP0, IFZENT. Sub rutin \texttt{TFELD} disajikan pada Gambar \ref{fig:tfeld}.
+Sub rutin perhitungan distribusi temperatur akan dijalankan oleh sub rutin 1.2, \texttt{THERMIX}. Sub rutin tersebut adalah sub rutin \texttt{MAITHX} yang disajikan pada Gambar \ref{fig:maithx}. Sub rutin \texttt{MAITHX} menerima empat argumen, masing-masing adalah 
+\begin{itemize}
+  \item \texttt{N200}
+  \item \texttt{NXS}
+  \item \texttt{NDR}
+  \item \texttt{KMAT}: jumlah nuklida yang dipertimbangkan dalam simulasi
+\end{itemize}
+
+Selanjutnya, sub rutin STEUER menerima argumen IFKON, ITLAM, TDIFF, NLOOP, IFRED, IFZW, ITM3, CP0, IFTEST, NHET, ZEITH, XFR, IEXPR, N200, NDR, NXS, POV, ZF, NRY, QNW, DELDZ, QTHX, dan WTGINT. Sub rutin \texttt{STEUER} disajikan pada Gambar \ref{fig:steuer}. Terakhir, sub rutin \texttt{TFELD} akan menerima argumen ITLAM, OVRM, IFKO1, IFWARN, CP0, IFZENT. Sub rutin \texttt{TFELD} disajikan pada Gambar \ref{fig:tfeld}.
 
 
 \chapter{Rancangan Pengujian}
