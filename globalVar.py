@@ -64,6 +64,10 @@ Print['phip']=[]
 Print['radp']=[]
 Print['indgeo']=0
 """add steuer,calt subroutine"""
+Print['zp']=[] """40 elements"""
+Print['rp']=[] """25 elements"""
+Print['strom']=[] """40x25 elements"""
+"""The last 3 elements of dictionary Print comes from KONVEK2.FOR common, with the sama name, Print"""
 
 reg={}
 reg['imax']=0
@@ -85,7 +89,7 @@ reg['ifref']=0
 
 komp1={}
 komp1['kmax']=0
-komp1['kom']=[]
+komp1['kom']=[] """ada jg di komptx yg berdimensi 40x25"""
 komp1['lam']=[]
 komp1['tvor']=[]
 komp1['alp']=[]
@@ -114,7 +118,7 @@ Iter1={}
 Iter1['trmax']=0
 Iter1['mit']=0
 Iter1['tn']=0
-Iter1['ovrel']=0
+Iter1['ovrel']=0.0
 Iter1['itmax']=0
 Iter1['t1']=0 """Ada juga di Ui"""
 Iter1['t2']=0
@@ -263,8 +267,8 @@ mputa['qwu']=0
 
 ui={}
 ui['dumm']=[]
-ui['nm1']=0
-ui['im1']=0
+ui['nm1']=0 """was also defined in konst dictionary"""
+ui['im1']=0 """was also defined in konst dictionary"""
 ui['dm']=[]
 ui['intv']=0
 ui['dtm1']=0
@@ -287,7 +291,7 @@ ui['ifkst']=0
 ui['ifneu']=0
 ui['ifselb']=0
 ui['iit']=0
-ui['im']=0
+ui['im']=0 
 ui['nm']=0
 ui['vkug']=0
 ui['vmat']=0
@@ -318,16 +322,18 @@ ui['tz']=0
 ui['dpp']=0
 ui['ifkon']=0
 ui['wkapzt']=0 
-ui['dum']=[] """ada juga di qvar"""
+ui['dum']=[] """ada juga di qvar & stroem"""
 """dan steuer subroutine"""
+ui['ifep']=0 """defined in stroem (KONVEK2.FOR) sub routine"""
+ui['start']=0 """defined in stroem (KONVEK2.FOR) sub routine"""
 
 """
 steuer subroutine
 """
-bock21={}
-bock21['pkpop']=[]
-bock21['tfkop']=[]
-bock21['qkop']=[]
+bock21={} """this dictionary was also defined in KONVEK2.FOR, in stroem sub routine"""
+bock21['pkpop']=[] """10 elements"""
+bock21['tfkop']=[] """10 elements"""
+bock21['qkop']=[] """10 elements"""
 bock21['ifkost']=0
 bock21['dszeit']=0
 
@@ -355,10 +361,10 @@ bilanz={}
 bilanz['tgasm']=0
 bilanz['izael']=0
 
-coupl={}
+coupl={} """this dictionary was also defined in KONVEK2.FOR, in stroem sub routine"""
 coupl['iprint']=0
-coupl['zquell']=[]
-coupl['rquell']=[]
+coupl['zquell']=[] """100 elements"""
+coupl['rquell']=[] """100 elements"""
 
 tvar={}
 tvar['iftkv']=0
@@ -402,9 +408,9 @@ mpunkt['empu']=0
 mpunkt['tttein']=0
 mpunkt['tttaus']=0
 
-zwang={}
-zwang['stzuk']=[]
-zwang['tflvor']=[]
+zwang={} """this dictionary was also defined in KONVEK2.FOR, in stroem sub routine"""
+zwang['stzuk']=[] """20 elements"""
+zwang['tflvor']=[] """20 elements"""
 zwang['ifnetz']=0
 
 setwd={}
@@ -447,6 +453,11 @@ qps1=[]
 for i in range(31):
 	qps1.append(0.0)
 
+"""
+In line 529 of THERMIX1.FOR, QSPEIZ, QKONVZ,QNUKLZ were define as 2D matrix with the size of 31x5
+Furthermore, in line 687-691, these 3 variables were assiged with 0. to its elements in position of K,NZ
+This assigment should not exceed their capacity that was already defined.
+"""
 temp=[0.0, 0.0, 0.0, 0.0, 0.0]
 qspeiz=[]
 for i in range(31):
@@ -483,6 +494,126 @@ Print1['n']=0
 iterh['dttt']=0
 iterh['ihmax']=0
 
+"""STROEM sub rutin"""
+verti={}
+verti['nverti']=0
+verti['iover']=[] """defined as a matrix 25x8"""
+verti['iuver']=[] """defined as a matrix 25x8"""
+verti['kkomv']=[] """defined as a matrix 8"""
+verti['sumxk']=[] """defined as a matrix 25x8"""
+verti['sumrg']=[] """defined as a matrix 25x8"""
+     
+hohlr={}
+hohlr['kpar']=[] """defined as a matrix 10"""
+hohlr['kkom']=[] """defined as a matrix 10"""
+hohlr['nrhlr']=[] """defined as a matrix 20"""
+hohlr['nhlr']=0
+hohlr['phohl']=[] """defined as a matrix 10"""
+hohlr['nml']=[] """defined as a matrix 10"""
+hohlr['nmr']=[] """defined as a matrix 10"""
+hohlr['il']=[] """defined as a matrix 10"""
+hohlr['vol']=[] """defined as a matrix 10"""
+hohlr['strbez']=[] """defined as a matrix 40"""
+hohlr['ifqrow']=[] """defined as a matrix 40"""
+hohlr['ipar']=[] """defined as a matrix 50x10"""
+hohlr['npar']=[] """defined as a matrix 50x10"""
+hohlr['jpar']=[] """defined as a matrix 50x10"""
+
+kuel1={}
+kuel1['nkuel']=0
+kuel1['kkomk']=[] """defined as a matrix 4"""
+kuel1['iokul']=[] """defined as a matrix 25x4"""
+kuel1['iukul']=[] """defined as a matrix 25x4"""
+kuel1['xkul']=[] """defined as a matrix 25x4"""
+
+itparm={}
+itparm['ifg01']=0
+itparm['ifg03']=0
+itparm['ifg04']=0
+itparm['ovloop']=0
+
+prandl={}
+prandl['pran']=0
+prandl['rogg']=[] """defined as a matrix 40x25"""
+
+konst={}
+konst['epsi']=0
+konst['rek']=0
+konst['pk']=0
+konst['revor']=0
+konst['druck']=0
+konst['cp']=0
+konst['pi']=0
+"""konst['nm1']=0 this nm1 was also defined in ui. ui dictionary was used because it also has nm element"""
+"""konst['im1']=0 this im1 was also defined in ui. ui dictionary was used because it also has im element"""
+konst['km']=0
+konst['dkug']=0
+
+TEMP={}
+TEMP['t']=[] """40x25 elements"""
+TEMP['tfl']=[] """40x25 elements"""
+TEMP['rho']=[] """40x25 elements"""
+TEMP['ifb']=[] """40x25 elements"""
+TEMP['xkk']=[] """40x25 elements"""
+
+geo={}
+geo['r']=[] """25 elements"""
+geo['z']=[] """25 elements"""
+geo['fzq']=[] """25 elements"""
+geo['frq']=[] """40x25 elements"""
+geo['dr']=[] """40x25 elements"""
+geo['dz']=[] """40 elements"""
+geo['title']=''
+
+drukk={}
+drukk['mz']=[] """40x25 elements"""
+drukk['mr']=[] """40x25 elements"""
+drukk['p']=[] """40x25 elements"""
+drukk['xkr']=[] """40x25 elements"""
+drukk['xkz']=[] """40x25 elements"""
+
+Iter={}
+Iter['ib']=0
+Iter['it']=0
+Iter['it1']=0
+Iter['it2']=0
+Iter['itm1'=0
+Iter['itm2']=0
+Iter['epsi1']=0
+Iter['epsi2']=0
+Iter['ifsq']=0
+Iter['ovm1']=0
+Iter['ovm2']=0
+
+komptx={}
+komptx['kom']=[] """40x25 elements, ada jg di komp1"""
+komptx['pvor']=[] """20 elements"""
+komptx['xkkr']=[] """20 elements"""
+komptx['ifbr']=[] """20 elements"""
+komptx['alpha']=[] """20 elements"""
+komptx['ifbq']=[] """20 elements"""
+
+gasneu={}
+gasneu['alga']=[] """40x25x2 elements"""
+
+ite2={}
+ite2['smax']=0
+ite2['tdiff']=0
+ite2['srowm']=0
+ite2['ira']=0
+ite2['zrs']=0
+ite2['nvit']=0
+ite2['wtrans']=0
+ite2['wsum']=0
+ite2['wrest']=0
+ite2['ifgs']=0
+
+bock22={}
+bock22['isteu3']=0
+bock22['isteu4']=0
+bock22['xitq']=0
+bock22['xitte']=0
+
 """
 Dimensions
 """
@@ -509,6 +640,7 @@ wc=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 xinh=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 xkoeff=[] """defined at THERMIX2.FOR, consist of 5x5 elements"""
 x=[] """defined at THERMIX2.FOR, consist of 5 elements"""
+pb=[] """4 elements, defined in stroem (KONVEK2.FOR) sub routine"""
 """tneu=[] 2D array which is the size is currently unknown, its initial name is the same with a function. In this code, the function will be named in capital"""
 """
 Temporary file, intended to anticipate N61 writing process.
