@@ -1,4 +1,5 @@
 import globalVar
+from vau import VAU
 """
 BERECHNET DIE KONSTANTEN FUER DIE STROEMUNGSBERECHNUNG
 Perhitungan konstan untuk aliran
@@ -15,3 +16,6 @@ def STRLAM(ifxkk):
 				kk=globalVar.komptx['kom'][i][n]
 				globalVar.konst['epsi']=globalVar.spezi['epsil'][kk] """how can we assure that the value of kk is never exceed the element of the array"""
 				ifb1=globalVar.TEMP['ifb'][i][n]+1
+				
+				if ifb1==3 or ifb1==4 or ifb1==5:
+					
