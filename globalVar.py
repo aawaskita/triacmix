@@ -502,6 +502,7 @@ verti['iuver']=[] """defined as a matrix 25x8"""
 verti['kkomv']=[] """defined as a matrix 8"""
 verti['sumxk']=[] """defined as a matrix 25x8"""
 verti['sumrg']=[] """defined as a matrix 25x8"""
+"""strlam sub routine also uses these variables"""
      
 hohlr={}
 hohlr['kpar']=[] """defined as a matrix 10"""
@@ -613,6 +614,29 @@ bock22['isteu3']=0
 bock22['isteu4']=0
 bock22['xitq']=0
 bock22['xitte']=0
+
+"""strlam sub routine"""
+spezi={}
+spezi['epsil']=[] """20 elements"""
+spezi['xkon']=[] """20 elements"""
+spezi['dhyd']=[] """20 elements"""
+
+kuel2={}
+kuel2['drohr']=[] """20 elements"""
+kuel2['qtv']=[] """20 elements"""
+kuel2['ltv']=[] """20 elements"""
+kuel2['xgeo']=[] """20 elements"""
+
+"""CIT3 modul"""
+aflux={}
+aflux['nit']=0 """this variable is used in stroem sub routine"""
+"""aflux['bflux']=[] 30 elements
+aflux['kxmn8']=0
+aflux['niit']=0
+aflux['niiit']=0
+aflux['jxp1']=0
+aflux['ksct1']=0
+aflux['ksct2']=0"""
 
 """
 Dimensions

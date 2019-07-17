@@ -39,6 +39,15 @@ def STROEM(ifm1,ifm2):
 		
 		"""globalVar.Iter['it']<100"""
 		niterm=1 """can a fortran create a variable without declaring it first?"""
-		"""FRIST(start) start was accidentatlly appeared with being declare first"""
-		
+		FRIST(globalVar.ui['start'])
+		globalVar.Iter['it2']=0
+		globalVar.ui['ifep']=0
+	
+	"""this is a returning point from quite far statement, what a messy program"""
+		while globalVar.aflux['nit'] !=1:
+			globalVar.Iter['it']=100
+			
+			nita=globalVar.aflux['nit']
 	"""if ifm1==1"""
+	
+	
