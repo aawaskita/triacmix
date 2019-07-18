@@ -41,7 +41,7 @@ trans['dzeit']=[]
 trans['zei']=[]
 trans['nprint']=[]
 trans['nkonv']=[]
-trans['rho']=[]
+"""trans['rho']=[] commented out at July 18,2019"""
 trans['c']=[]
 """and steuer subroutine"""
 
@@ -89,7 +89,7 @@ reg['ifref']=0
 
 komp1={}
 komp1['kmax']=0
-komp1['kom']=[] """ada jg di komptx yg berdimensi 40x25"""
+"""komp1['kom']=[] ada jg di komptx yg berdimensi 40x25"""
 komp1['lam']=[]
 komp1['tvor']=[]
 komp1['alp']=[]
@@ -562,7 +562,7 @@ geo['r']=[] """25 elements"""
 geo['z']=[] """25 elements"""
 geo['fzq']=[] """25 elements"""
 geo['frq']=[] """40x25 elements"""
-geo['dr']=[] """40x25 elements"""
+geo['dr']=[] """25 elements"""
 geo['dz']=[] """40 elements"""
 geo['title']=''
 
