@@ -638,6 +638,26 @@ aflux['jxp1']=0
 aflux['ksct1']=0
 aflux['ksct2']=0"""
 
+"""ELEM3A sub routine"""
+boc21b={}
+boc21b['xzsum']=[] """20 elements"""
+boc21b['xnsum1']=[] """20 elements"""
+boc21b['ikon']=0
+
+"""vert1={}"""
+"""vert1['sumxk']=[] 25x8 elements, was also defined in verti sub routine"""
+"""vert1['sumrg']=[] 25x8 elements, was also defined in verti sub routine"""
+
+COMMON /UI8/ DU,ROG,PB
+ui8={}
+"""ui8['du']=0 this element was also defined in:
+1. ksum (maithx)
+2. zeug (w2eu)
+3. konthx (steuer)
+4. ui8 (elem3a)"""
+ui8['rog']=0
+ui8['pb']=0
+
 """
 Dimensions
 """
@@ -664,7 +684,11 @@ wc=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 xinh=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 xkoeff=[] """defined at THERMIX2.FOR, consist of 5x5 elements"""
 x=[] """defined at THERMIX2.FOR, consist of 5 elements"""
-pb=[] """4 elements, defined in stroem (KONVEK2.FOR) sub routine"""
+"""pb=[] 4 elements, defined in stroem (KONVEK2.FOR) sub routine. it was also defined in elem3a sub rotuine undex ui8 dictionary"""
+rogp=[] """50 elements, defined in elem3a sub routine"""
+xkp=[] """50 elements, defined in elem3a sub routine"""
+m=[] """4 elements, defined for elem3a sub routine"""
+
 """tneu=[] 2D array which is the size is currently unknown, its initial name is the same with a function. In this code, the function will be named in capital"""
 """
 Temporary file, intended to anticipate N61 writing process.

@@ -1,5 +1,6 @@
 import globalVar
 from frist import FRIST
+from strlam import STRLAM
 """
 KONTROL PERHITUNGAN ITERATIF TEKANAN DAN BIDANG ALIRAN. KRITERI KONVERGENSI ADALAH PENGINGAT ALIRAN MASSA (SERIAL).
 HANYA PERHITUNGAN ALIRAN LAMINAR PSEUSO. BIDANG PENCETAKAN DAPAT DIATASI KHUSUS (---> TANPA PERHITUNGAN KONSTAN BARU)
@@ -44,8 +45,19 @@ def STROEM(ifm1,ifm2):
 		globalVar.ui['ifep']=0
 	
 	"""this is a returning point from quite far statement, what a messy program"""
-		while globalVar.aflux['nit'] !=1:
+		while True: """ loop until -> globalVar.aflux['nit'] !=1: met"""
 			globalVar.Iter['it']=100
+			STRLAM(ifkxx)
+			globalVar.Iter['it2']=globalVar.Iter['it2']+1
+			if ifm1 == 1:
+				niterm=1
+			for niter in range(niterm):
+				diff=1.0e10
+				ifmxy=niterm-niter+1
+				if globalVar.hohlr['nhlr'] != 0:
+					for j in range(globalVar.hohlr['nhlr']):
+						
+			
 			
 			nita=globalVar.aflux['nit']
 	"""if ifm1==1"""
