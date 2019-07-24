@@ -357,6 +357,27 @@ memformat hasil perhitungan distribusi temperatur sesuai dengan karakterisktik m
   \end{center}
 \end{figure}
 
+Sub rutin 1.1 (\textit{Input Adapter}) juga melingkupi daftar variabel yan digunakan. Sampai saat dokumen ini disusun, belum ada informasi yang berarti tentang peran dari sangat banyaknya variabel yang digunakan dalam kode sumber Thermix yang dibangun menggunakan Fortran. Variabel-variabel tersebut bahkan banyak yang dideklarasikan berulang, yang tidak mungkin diijinkan dalam konsep bahasa pemrograman saat ini. 
+
+Variabel-variabel tersebut akan dideklarasikan dalam berkas yang diberi nama \texttt{globalVar.py}. Untuk variabel yang dideklarasikan dalam Thermix sebagai \texttt{COMMON}, variabel tersebut akan dideklarasikan dalam \texttt{python} sebagai \texttt{dictionary}. Elemen COMMON akan menjadi \texttt{elemen} \texttt{dictionary}. Sebagai contoh, variabel \texttt{COMMON} di \texttt{Fortran} (Listing \ref{drukkFortran}) akan dideklarasikan sebagai dictionary di \texttt{python} (Listing \ref{drukk}).
+
+\scriptsize
+\begin{lstlisting}[language=fortran, numbers=left, numberstyle=\tiny, caption=Deklarasi variabel berjenis COMMON di Fortran, showstringspaces=false, label=drukkFortran]
+COMMON/DRUKK/MZ(40,25),MR(40,25),P(40,25),XKR(40,25),XKZ(40,25)
+\end{lstlisting}
+\normalsize
+
+\scriptsize
+\begin{lstlisting}[language=python, numbers=left, numberstyle=\tiny, caption=Deklarasi variabel berjenis dictionary, showstringspaces=false, label=drukk]
+drukk={}
+drukk['mz']=[] """40x25 elements"""
+drukk['mr']=[] """40x25 elements"""
+drukk['p']=[] """40x25 elements"""
+drukk['xkr']=[] """40x25 elements"""
+drukk['xkz']=[] """40x25 elements"""
+\end{lstlisting}
+\normalsize
+
 Sub rutin perhitungan distribusi temperatur akan dijalankan oleh sub rutin 1.2, \texttt{THERMIX}. Sub rutin tersebut adalah sub rutin \texttt{MAITHX} yang disajikan pada Gambar \ref{fig:maithx}. Sub rutin \texttt{MAITHX} menerima empat argumen, masing-masing adalah 
 \begin{itemize}
   \item \texttt{N200}
