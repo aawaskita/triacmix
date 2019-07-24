@@ -109,7 +109,7 @@ def STROEM(ifm1,ifm2):
 										break
 							pp=globalVar.drukk['p'][i][n]
 							"""the arguments that were passed through a function, should not be stated if they were already defined in globalVar"""
-							ELEM3 (ifm2,globalVar.pb,pp,globalVar.kb,STROMB,rogo,rogu,mxb,myb,stzu,ifmxy)
+							ELEM3 (ifm2,pp,globalVar.kb,STROMB,rogo,rogu,mxb,myb,stzu,ifmxy)
 			
 			
 			nita=globalVar.aflux['nit']

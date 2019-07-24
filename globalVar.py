@@ -228,9 +228,9 @@ vardit['b']=[]
 """dan steuer subroutine"""
 
 addrt={} 
-addrt['kx']=[]
-addrt['ky']=[]
-addrt['lz']=[]
+addrt['kx']=[] """50 elements"""
+addrt['ky']=[] """50 elements"""
+addrt['lz']=[] """50 elements"""
 addrt['nendpt']=0
 """dan steuer subroutine"""
 
@@ -687,6 +687,7 @@ x=[] """defined at THERMIX2.FOR, consist of 5 elements"""
 pb=[] """4 elements, defined in stroem (KONVEK2.FOR) sub routine. it has the same name with a dictionary element's name defined in elem3a sub rotuine undex ui8 dictionary"""
 kb=[] """4 elements, defined in stroem (KONVEK2.FOR) sub routine."""
 rogp=[] """50 elements, defined in elem3a sub routine"""
+rog=[] """4 elements, defined in elem3 sub routine"""
 xkp=[] """50 elements, defined in elem3a sub routine"""
 m=[] """4 elements, defined for elem3a sub routine"""
 
