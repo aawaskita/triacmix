@@ -18,6 +18,11 @@
 \fi
 #2}}
 
+\bibitem{vsop1}
+H.~B. K.~J.~R\"{u}tten, K. A.~Haas and W.~Scherer, ``V.s.o.p (99/05) computer
+  code system for reactor physics and fuel cycle simulation,''
+  Forschungszentrum J\"{u}lich GmbH, Tech. Rep., 2005.
+
 \bibitem{report1}
 K.~Verfondern and H.~Nabielek, ``The mathematical basis of the panama-i code
   for modelling pressure vessel failure of triso coated particles under
@@ -39,11 +44,6 @@ A.~A. Waskita and T.~Setiadipura, ``The development of {TRIAC}-{BATAN}: a triso
   minus 0.4em\relax {IOP} Publishing, apr 2019, p. 022035. [Online]. Available:
   \url{https://doi.org/10.1088%2F1742-6596%2F1198%2F2%2F022035}
 \BIBentrySTDinterwordspacing
-
-\bibitem{vsop1}
-H.~B. K.~J.~R\"{u}tten, K. A.~Haas and W.~Scherer, ``V.s.o.p (99/05) computer
-  code system for reactor physics and fuel cycle simulation,''
-  Forschungszentrum J\"{u}lich GmbH, Tech. Rep., 2005.
 
 \bibitem{vsop2}
 K.~A.~H. K.~J.~R\"{u}tten and C.~Pohl, ``Computer code system v.s.o.p (99/11)

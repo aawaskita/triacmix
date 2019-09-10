@@ -1,8 +1,10 @@
 \contentsline {chapter}{Daftar Gambar}{ii}{section*.1}
 \contentsline {chapter}{Daftar Program}{iii}{section*.4}
 \contentsline {chapter}{\numberline {1}Pendahuluan}{2}{chapter.1}
-\contentsline {chapter}{\numberline {2}Struktur Program}{3}{chapter.2}
-\contentsline {section}{\numberline {2.1}Diagram konteks}{3}{section.2.1}
-\contentsline {section}{\numberline {2.2}Kebutuhan fungsi}{3}{section.2.2}
-\contentsline {section}{\numberline {2.3}Diagram alir data level 1}{5}{section.2.3}
-\contentsline {chapter}{\numberline {3}Rancangan Pengujian}{12}{chapter.3}
+\contentsline {section}{\numberline {1.1}Latar Belakang}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Konsep Dasar}{2}{section.1.2}
+\contentsline {chapter}{\numberline {2}Struktur Program}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Diagram konteks}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}Kebutuhan fungsi}{5}{section.2.2}
+\contentsline {section}{\numberline {2.3}Diagram alir data level 1}{7}{section.2.3}
+\contentsline {chapter}{\numberline {3}Rancangan Pengujian}{14}{chapter.3}

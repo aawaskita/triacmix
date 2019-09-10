@@ -72,6 +72,7 @@
 \pagenumbering{arabic}
 
 \chapter{Pendahuluan}
+\section{Latar Belakang}
 Analisis keselamatan reaktor nuklir melibatkan sejumlah aspek seperti diperlihatkan pada \figurename~\ref{fig:aspek}. Setelah upaya melakukan rekayasa balik terhadap PANAMA \cite{report1,VERFONDERN201484} untuk aspek kinerja bahan bakar \cite{triac1}, dipandang perlu untuk melanjutkan analisis keselamatan di aspek \textit{thermal hydraulics}.
 
 \begin{figure}[h!]
@@ -86,6 +87,40 @@ Kode komputer THERMIX \cite{vsop1,vsop2} sebagai salah satu kode baku dalam anal
 
 Karenanya, perangkat lunak akan dikembangkan berdasarkan data referensi dan dokumentasi  \textbf{\cite{vsop1,vsop2}}. Hasil rekayasa balik akan berupa prototipe kode komputer/perangkat lunak yang terintegrasi dengan modul analisis keselamatan bahan bakar berbasis partikel triso \cite{triac1} dan analisis ketidakpastian \cite{lhs}.
 
+\section{Konsep Dasar}
+Skema alur program THERMIX dapat dijelaskan melalui Gambar \ref{fig:flowscheme}. Skema alur tersebut didasarkan pada 3 konsep kekealan dalam fisika, masing-masing adalah kekekalan massa, momentum dan energi. Ketiga aspek kekekalan yang akan dibahas berikut ini juga berbasis pada \cite{vsop1}
+
+\begin{figure}[h!]
+  \begin{center}
+    \includegraphics[scale=.5]{pics/flowScheme.png}
+    \caption{Skema alur program THERMIX \cite{vsop1}}
+    \label{fig:flowscheme}
+  \end{center}
+\end{figure}
+
+Kekekalan massa gas pendingin dalam bentuk \textit{quasi-static} menghasilkan vektor alir $G=\rho_G \vec{\nu}$ sepanjang \textit{loop}. Kekekalan massa gas tersebut dinotasikan dalam persamaan (\ref{eq:q}). $\rho_G$ adalah kerapatan gas pendingin $\left[ \frac{kg}{m^3}\right]$. $\vec{\nu}$ adalah kecepatan $\left[ \frac{m}{s} \right]$. Sedangkan $q$ adalah kerapatan laju massa sumber $\left[\frac{kg}{s.m^3}\right]$.
+
+\begin{equation}
+  \nabla \rho_G \vec{\nu}=q
+  \label{eq:q}
+\end{equation}
+
+Kekekalan momentum dalam bentuk \textit{quasi static} menghasilkan medan tekanan $p$ sepanjang \textit{loop}, dengan $p$ adalah tekanan statis, $\vec{g}$ adalah gravitasi dan $\vec{R}$ adalah gaya gesek. 
+
+\begin{equation}
+  \nabla p-\rho_G \vec{g} + \vec{R}=0
+  \label{eq:momentum}
+\end{equation}
+
+Persamaan (\ref{eq:momentum}) memberikan \textit{gradient} kesetimbangan tekanan, gaya hidrostatik dari gravitasi serta gaya gesek per satuan volume. Percepatan spasial dan inersia diabaikan di sini. Selanjutnya, gaya gesek didefinisikan sebagai persamaan (\ref{eq:akselerasi}). Dengan $\psi$ adalah koefisien penurunan tekanan untuk aliran melalui \textit{pebble bed} sedangkan $d$ adalah diameter \textit{pebble}. 
+\begin{equation}
+  \vec{R}=\frac{\psi}{d}\frac{1-\epsilon}{\epsilon^3}\frac{|G|}{2\rho_G}\vec{G}
+  \label{eq:akselerasi}
+\end{equation}
+
+Evaluasi persamaan (\ref{eq:momentum}) dan (\ref{eq:akselerasi}), seperti pada Gambar \ref{fig:flowscheme}, dilakukan dalam sub rutin \texttt{STROEM} dalam \texttt{KONVEK2.FOR}.
+
+Sementara untuk kekekalan 
 \chapter{Struktur Program}
 
 \section{Diagram konteks}
@@ -225,10 +260,10 @@ Tahapan selanjutnya adalah membuka struktur program dan melihat keterkaitan anta
   \end{center}
 \end{table}
 
-Selain itu, terdapat juga terdapat juga fungsi/sub rutin yang didefinisikan pada program di luar \texttt{THERMIX}. \tablename~\ref{tab:anomali} menyajikan fungsi-fungsi tersebut.
+Selain itu, terdapat juga fungsi/sub rutin yang didefinisikan pada program di luar \texttt{THERMIX}. \tablename~\ref{tab:anomali} menyajikan fungsi-fungsi tersebut.
 
 \begin{table}[h!]
-  \caption{Daftar fungsi dan subrutin dalam program \texttt{THERMIX4.FOR}}
+  \caption{Daftar fungsi dan subrutin yang didefinisikan dalam program \texttt{THERMIX4.FOR}}
   \label{tab:anomali}
   \begin{center}
     \begin{tabular}{p{2cm}|p{2.75cm}|p{3cm}|p{4.5cm}} \toprule
@@ -356,6 +391,27 @@ memformat hasil perhitungan distribusi temperatur sesuai dengan karakterisktik m
     \label{fig:level1}
   \end{center}
 \end{figure}
+
+Sub rutin 1.1 (\textit{Input Adapter}) juga melingkupi daftar variabel yan digunakan. Sampai saat dokumen ini disusun, belum ada informasi yang berarti tentang peran dari sangat banyaknya variabel yang digunakan dalam kode sumber Thermix yang dibangun menggunakan Fortran. Variabel-variabel tersebut bahkan banyak yang dideklarasikan berulang, yang tidak mungkin diijinkan dalam konsep bahasa pemrograman saat ini. 
+
+Variabel-variabel tersebut akan dideklarasikan dalam berkas yang diberi nama \texttt{globalVar.py}. Untuk variabel yang dideklarasikan dalam Thermix sebagai \texttt{COMMON}, variabel tersebut akan dideklarasikan dalam \texttt{python} sebagai \texttt{dictionary}. Elemen COMMON akan menjadi \texttt{elemen} \texttt{dictionary}. Sebagai contoh, variabel \texttt{COMMON} di \texttt{Fortran} (Listing \ref{drukkFortran}) akan dideklarasikan sebagai dictionary di \texttt{python} (Listing \ref{drukk}).
+
+\scriptsize
+\begin{lstlisting}[language=fortran, numbers=left, numberstyle=\tiny, caption=Deklarasi variabel berjenis COMMON di Fortran, showstringspaces=false, label=drukkFortran]
+COMMON/DRUKK/MZ(40,25),MR(40,25),P(40,25),XKR(40,25),XKZ(40,25)
+\end{lstlisting}
+\normalsize
+
+\scriptsize
+\begin{lstlisting}[language=python, numbers=left, numberstyle=\tiny, caption=Deklarasi variabel berjenis dictionary, showstringspaces=false, label=drukk]
+drukk={}
+drukk['mz']=[] """40x25 elements"""
+drukk['mr']=[] """40x25 elements"""
+drukk['p']=[] """40x25 elements"""
+drukk['xkr']=[] """40x25 elements"""
+drukk['xkz']=[] """40x25 elements"""
+\end{lstlisting}
+\normalsize
 
 Sub rutin perhitungan distribusi temperatur akan dijalankan oleh sub rutin 1.2, \texttt{THERMIX}. Sub rutin tersebut adalah sub rutin \texttt{MAITHX} yang disajikan pada Gambar \ref{fig:maithx}. Sub rutin \texttt{MAITHX} menerima empat argumen, masing-masing adalah 
 \begin{itemize}

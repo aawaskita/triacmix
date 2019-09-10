@@ -12,9 +12,9 @@ Database file #1: references.bib
 -- IEEEtran.bst version 1.11 (2003/04/02) by Michael Shell.
 -- http://www.ctan.org/tex-archive/macros/latex/contrib/supported/IEEEtran/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
-Warning--empty booktitle in triac1
 Name 1 in "K. J. R\"{u}tten, K. A. Haas, H. Brockmann, and W. Scherer" has a comma at the end for entry vsop1
 while executing---line 4725 of file IEEEtran.bst
+Warning--empty booktitle in triac1
 Name 1 in "K. J. R\"{u}tten, K. A. Haas, and C. Pohl" has a comma at the end for entry vsop2
 while executing---line 4725 of file IEEEtran.bst
 Warning--empty author in iso
