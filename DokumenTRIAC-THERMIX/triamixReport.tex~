@@ -120,7 +120,7 @@ Persamaan (\ref{eq:momentum}) memberikan \textit{gradient} kesetimbangan tekanan
 
 Evaluasi persamaan (\ref{eq:momentum}) dan (\ref{eq:akselerasi}), seperti pada Gambar \ref{fig:flowscheme}, dilakukan dalam sub rutin \texttt{STROEM} dalam \texttt{KONVEK2.FOR}.
 
-Sementara untuk kekekalan 
+Sementara untuk kekekalan energi
 \chapter{Struktur Program}
 
 \section{Diagram konteks}

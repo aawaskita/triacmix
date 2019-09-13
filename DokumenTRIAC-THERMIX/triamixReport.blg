@@ -3,6 +3,7 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: triamixReport.aux
 A level-1 auxiliary file: sampul.aux
 The style file: IEEEtran.bst
+A level-1 auxiliary file: markLampiran.aux
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
@@ -22,7 +23,7 @@ Warning--empty author in iso
 Done.
 You've used 8 entries,
             3975 wiz_defined-function locations,
-            846 strings with 8572 characters,
+            847 strings with 8588 characters,
 and the built_in function-call counts, 4536 in all, are:
 = -- 369
 > -- 87
